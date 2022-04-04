@@ -17,15 +17,15 @@ use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 
 
 //1- Do something in the route 
-Route::get('/flight',function(){
+Route::get('/flight.html',function(){
     return view('welcome');
 });
 
-Route::get('/hotel',function(){
+Route::get('/hotel.html',function(){
     return view('welcome');
 });
 
-Route::get('/car',function(){
+Route::get('/car.html',function(){
     return view('welcome');
 });
 
@@ -43,6 +43,8 @@ Route::get('/welcome', function () {
 //3- Call Controller Function
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/index.html', [HomeController::class,'index'])->name('home');
 
 //4- Route-> Controller->View
 
