@@ -30,6 +30,7 @@ class TripController extends Controller
         return view('admin.trip.create');
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
