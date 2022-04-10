@@ -70,3 +70,9 @@ Route::middleware([
 //******* ADMIN PANEL ROUTES *******
 
 Route::get('/admin', [AdminHomeController::class,'index'])->name('admin');
+
+//******* ADMIN TRIP ROUTES *******
+
+Route::get('/admin/trip', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'index'])->name('admin_trip');
+
+Route::get('/admin/trip/create', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'create'])->name('admin_trip_create');
