@@ -77,3 +77,4 @@ Route::get('/admin/trip', [\App\Http\Controllers\AdminPanel\Tripcontroller::clas
 
 Route::get('/admin/trip/create', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'create'])->name('admin_trip_create');
 
+Route::post('/admin/trip/store', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'store'])->name('admin_trip_store');

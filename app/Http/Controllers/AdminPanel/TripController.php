@@ -30,7 +30,7 @@ class TripController extends Controller
         return view('admin.trip.create');
     }
 
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +39,17 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //;
+        echo $request;
+        $data = new Trip();
+        //$data->parent_id = 0;
+        $data->from = $request->input('from');
+        $data->to = $request->input('to');
+        $data->duration = $request->input('duration');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+        $data->save();
+
     }
 
     /**

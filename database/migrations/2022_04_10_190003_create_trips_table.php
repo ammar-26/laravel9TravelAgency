@@ -15,18 +15,18 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id');
-            $table->string('from');
-            $table->string('to');
+            $table->foreign('parent_id')->references('id')->on('parent');            $table->string('from')->nullable();
+            $table->string('to')->nullable();
             $table->string('duration')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
+            //$table->string('status', length:6)->default('False');
             $table->string('status', length:6);
             $table->timestamps();
         });
     }
 
-    
+
     /**
      * Reverse the migrations.
      *

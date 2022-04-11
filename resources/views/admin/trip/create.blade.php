@@ -35,7 +35,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="/admin/trip/store">
+                <form  role="form"  action="/admin/trip/store" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -66,14 +66,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <select class="form-control">
-                                <option>True</option>
-                                <option>False</option>
-                            </select>
-                        </div>
                         
+                        <!--<div class="col-sm-6">
+                            <!-- select -->
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select class="form-control" name="status">
+                                    <option>True</option>
+                                    <option>False</option>
+                                </select>
+                            </div>
+                        <!-- </div> -->
                     </div>
                     <!-- /.card-body -->
 
