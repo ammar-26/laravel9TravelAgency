@@ -3,6 +3,7 @@
 use App\Http\controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
+use App\Http\Controllers\AdminPanel\TripController as AdminTripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,8 +74,12 @@ Route::get('/admin', [AdminHomeController::class,'index'])->name('admin');
 
 //******* ADMIN TRIP ROUTES *******
 
-Route::get('/admin/trip', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'index'])->name('admin_trip');
+Route::get('/admin/trip', [AdminTripController::class,'index'])->name('admin_trip');
 
-Route::get('/admin/trip/create', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'create'])->name('admin_trip_create');
+Route::get('/admin/trip/create', [AdminTripController::class,'create'])->name('admin_trip_create');
 
-Route::post('/admin/trip/store', [\App\Http\Controllers\AdminPanel\Tripcontroller::class,'store'])->name('admin_trip_store');
+Route::post('/admin/trip/store', [AdminTripController::class,'store'])->name('admin_trip_store');
+
+Route::get('/admin/trip/edit/{id}', [AdminTripController::class,'edit'])->name('admin_trip_edit');
+
+Route::post('/admin/trip/update/{id}', [AdminTripController::class,'update'])->name('admin_trip_update');

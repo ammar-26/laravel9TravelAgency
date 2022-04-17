@@ -16,7 +16,8 @@ class TripController extends Controller
     public function index()
     {
         //
-        return view('admin.trip.index');
+        $data = trip::all();
+        return view('admin.trip.index', ['trip'=>$data]);
     }
 
     /**
@@ -40,16 +41,19 @@ class TripController extends Controller
     public function store(Request $request)
     {
         //;
-        echo $request;
-        $data = new Trip();
-        //$data->parent_id = 0;
-        $data->from = $request->input('from');
-        $data->to = $request->input('to');
-        $data->duration = $request->input('duration');
-        $data->description = $request->input('description');
-        $data->status = $request->input('status');
-        $data->save();
-
+        //echo $request;
+        $trip = new Trip();
+        //$trip->parent_id = 0;
+        $trip->from = $request->input('from');
+        $trip->to = $request->input('to');
+        $trip->duration = $request->input('duration');
+        $trip->description = $request->input('description');
+        $image = $request->file;
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+        $request->file->move('image',$imagename);
+        $trip->image = $imagename;
+        $trip->save();
+        return redirect('admin/trip');
     }
 
     /**
@@ -69,9 +73,13 @@ class TripController extends Controller
      * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function edit(Trip $trip)
+    public function edit(Trip $trip, $id)
     {
         //
+        $data = trip::find($id);
+        //$data = trip::all();
+        return view('admin.trip.edit', ['trip'=>$data]);
+
     }
 
     /**
@@ -81,9 +89,20 @@ class TripController extends Controller
      * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trip $trip)
+    public function update(Request $request, Trip $trip, $id)
     {
         //
+        $data = trip::find($id);
+        $trip->from = $request->input('from');
+        $trip->to = $request->input('to');
+        $trip->duration = $request->input('duration');
+        $trip->description = $request->input('description');
+        $image = $request->file;
+        //$imagename = time().'.'.$image->getClientOriginalExtension();
+        //$request->file->move('image',$imagename);
+        //$trip->image = $imagename;
+        $trip->save();
+        return redirect('admin/trip');
     }
 
     /**

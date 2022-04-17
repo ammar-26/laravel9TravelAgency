@@ -5,117 +5,64 @@
 
 @section('content')
 
-
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-        <div class="col-sm-6">
-            <h1>Add Trip</h1>
-        </div>
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-            <li class="breadcrumb-item active">Add Trip</li>
-            </ol>
-        </div>
-        </div>
-    </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-
-    <div class="card card-primary">
-                <div class="card-header">
-                <h3 class="card-title">Trip Details</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form  role="form"  action="/admin/trip/store" method="post">
+MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper site-min-height"> 
+        <h3><i class="fa fa-angle-right"></i>Add Trip</h3>
+        <div class="col-lg-12">
+            <div class="form-panel">
+                <h4 class="mb"><i class="fa fa-angle-right"></i> Trip Elements</h4>
+                
+                <form class="form-horizontal style-form" method="post" action="/admin/trip/store">
                     @csrf
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">from</label>
-                            <input type="text" class="form-control" name="from" placeholder="from">
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">From</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="from" class="form-control" placeholder="trip starts from">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">to</label>
-                            <input type="text" class="form-control" name="to" placeholder="to">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">duration</label>
-                            <input type="text" class="form-control" name="duration" placeholder="duration">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">description</label>
-                            <input type="text" class="form-control" name="description" placeholder="description">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">image</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="image">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose image</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!--<div class="col-sm-6">
-                            <!-- select -->
-                            <div class="form-group">
-                                <label>Status</label>
-                                <select class="form-control" name="status">
-                                    <option>True</option>
-                                    <option>False</option>
-                                </select>
-                            </div>
-                        <!-- </div> -->
                     </div>
-                    <!-- /.card-body -->
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">To</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="to" class="form-control" placeholder="ends at">
+                            <!-- <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Duration</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="duration" class="form-control" placeholder="period of trip">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="description" class="form-control" placeholder="descripe the trip">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="padding: 10px">
+                        <label class="col-sm-2 col-sm-2 control-label" style="padding: 1px">Image</label>
+                        <div>
+                            <input type="file" name="file" >
+                        </div>
+                    </div>
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>
+
                 </form>
             </div>
+        </div>
+        
+    </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
 
-
-    <!-- Default box -->
-<!--
-    <div class="card">
-        <div class="card-header">
-        <h3 class="card-title">Title</h3>
-
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-            <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-            <i class="fas fa-times"></i>
-            </button>
-        </div>
-        </div>
-        <div class="card-body">
-        Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-<!--        <div class="card-footer">
-        Footer
-        </div>
-        <!-- /.card-footer-->
-<!--    </div>
-    <!-- /.card -->
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    <!--main content end-->
 
 
 

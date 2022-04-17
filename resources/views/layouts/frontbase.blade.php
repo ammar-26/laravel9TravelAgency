@@ -90,5 +90,5 @@
         @include("home.footer")
 
         @yield('foot')
-    </body>
+</body>
 </html>

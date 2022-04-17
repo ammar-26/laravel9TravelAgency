@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreign('parent_id')->references('id')->on('parent');            $table->string('from')->nullable();
+            //$table->foreign('parent_id')->nullable(); 
+            $table->string('from')->nullable();
             $table->string('to')->nullable();
             $table->string('duration')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            //$table->string('status', length:6)->default('False');
-            $table->string('status', length:6);
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

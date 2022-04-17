@@ -7,57 +7,57 @@
 
 
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-        <div class="col-sm-6">
-            <h1>Trip List</h1>
+MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i>Trip list</h3>
+        <div class="row mt">
+            <div class="col-lg-12">
+            <div class="col-md-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i> Trip Lists</h4>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th style = "width: 25px">id</th>
+                            <th>from</th>
+                            <th>to</th>
+                            <th>duration</th>
+                            <th>description</th>
+                            <th>image</th>
+                            <th style = "width: 40px">edit</th>
+                            <th style = "width: 40px">delete</th>
+                            <th style = "width: 40px">show</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($trip as $rs)
+                        <tr>
+                            <td>{{$rs->id}}</td>
+                            <td>{{$rs->from}}</td>
+                            <td>{{$rs->to}}</td>
+                            <td>{{$rs->duration}}</td>
+                            <td>{{$rs->description}}</td>
+                            <td>{{$rs->image}}</td>
+                            <td><a href="/admin/trip/edit/{{$rs->id}}" class="btn btn-round btn-info">Edit</a></td>
+                            <td><a href="/admin/trip/delete/{{$rs->id}}" class="btn btn-round btn-danger">Delete</a></td>
+                            <td><a href="/admin/trip/show/{{$rs->id}}" class="btn btn-round btn-warning">Show</a></td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div><!-- --/content-panel ---->
+            </div>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
-            </ol>
-        </div>
-        </div>
-    </div><!-- /.container-fluid -->
-    </section>
+        
+    </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
 
-    <!-- Main content -->
-    <section class="content">
-
-    <!-- Default box -->
-    <div class="card">
-        <div class="card-header">
-        <h3 class="card-title">Title</h3>
-
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-            <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-            <i class="fas fa-times"></i>
-            </button>
-        </div>
-        </div>
-        <div class="card-body">
-        Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-        Footer
-        </div>
-        <!-- /.card-footer-->
-    </div>
-    <!-- /.card -->
-
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    <!--main content end-->
 
 
 @endsection 
