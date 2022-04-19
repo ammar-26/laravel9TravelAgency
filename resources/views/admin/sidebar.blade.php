@@ -11,20 +11,58 @@
                 <h5 class="centered">Ammar Mohamed</h5>
                 
                 <li class="mt">
-                    <a href="/admin/trip/create">
-                        <i class="fa fa-plane"></i>
-                        <span>add trip</span>
+                    <a href="/admin">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li class="sub-menu">
                     <a href="/admin/trip" >
                         <i class="fa fa-th"></i>
-                        <span>trip lists</span>
+                        <span>Trips</span>
                     </a>
                 </li>
 
                 
+                <li class="sub-menu">
+                    <a href="/admin/trip/create">
+                        <i class="fa fa-plane"></i>
+                        <span>Add trip</span>
+                    </a>
+                </li>
+                
+                <li class="sub-menu">
+                    <a href="/admin/trip" >
+                        <i class="fa fa-comment"></i>
+                        <span>Comments</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="/admin/trip" >
+                        <i class="fa fa-envelope"></i>
+                        
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                
+                <li class="sub-menu">
+                    <a href="/admin/trip" >
+                        <i class="fa fa-user"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+
+                <li class="nav-header" style="color:white">Labels</li>
+                <li class="nav-item">
+                    <a href="/admin/trip">
+                        <i class="fa fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
             </ul>
             <!-- sidebar menu end-->
         </div>

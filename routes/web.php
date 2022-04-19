@@ -31,6 +31,11 @@ Route::get('/car.html',function(){
 });
 
 
+Route::get('/contact.html',function(){
+    return view('welcome');
+});
+
+
 Route::get('/hello', function () {
     return 'Hello World';
 });
@@ -69,17 +74,31 @@ Route::middleware([
 });
 
 //******* ADMIN PANEL ROUTES *******
+Route::prefix('admin')->name('admin.')->group(function(){
 
-Route::get('/admin', [AdminHomeController::class,'index'])->name('admin');
 
-//******* ADMIN TRIP ROUTES *******
+    Route::get('/', [AdminHomeController::class,'index'])->name('index');
 
-Route::get('/admin/trip', [AdminTripController::class,'index'])->name('admin_trip');
+    Route::prefix('trip')->name('trip.')->controller(AdminTripController::class)->group(function(){
 
-Route::get('/admin/trip/create', [AdminTripController::class,'create'])->name('admin_trip_create');
 
-Route::post('/admin/trip/store', [AdminTripController::class,'store'])->name('admin_trip_store');
+        //******* ADMIN TRIP ROUTES *******
 
-Route::get('/admin/trip/edit/{id}', [AdminTripController::class,'edit'])->name('admin_trip_edit');
+        Route::get('/', 'index')->name('index');
 
-Route::post('/admin/trip/update/{id}', [AdminTripController::class,'update'])->name('admin_trip_update');
+        Route::get('/create', 'create')->name('create');
+
+        Route::post('/store', 'store')->name('store');
+
+        Route::get('/edit/{id}', 'edit')->name('edit');
+
+        Route::post('/update/{id}', 'update')->name('update');
+
+        Route::get('/show/{id}', 'show')->name('show');
+
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+
+    });
+
+});
+        

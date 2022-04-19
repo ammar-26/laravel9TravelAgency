@@ -44,14 +44,18 @@ class TripController extends Controller
         //echo $request;
         $trip = new Trip();
         //$trip->parent_id = 0;
+        $trip->title = $request->input('title');
         $trip->from = $request->input('from');
         $trip->to = $request->input('to');
         $trip->duration = $request->input('duration');
         $trip->description = $request->input('description');
         $image = $request->file;
-        $imagename = time().'.'.$image->getClientOriginalExtension();
-        $request->file->move('image',$imagename);
-        $trip->image = $imagename;
+        //$imagename = time().'.'.$image->getClientOriginalExtension();
+        //$request->file->move('image',$imagename);
+        //$trip->image = $imagename;
+        if($request->file('image')){
+            $data->image=$request->file('image')->store('image');
+        }
         $trip->save();
         return redirect('admin/trip');
     }
@@ -62,9 +66,12 @@ class TripController extends Controller
      * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function show(Trip $trip)
+    public function show(Trip $trip, $id)
     {
         //
+        
+        $data = trip::find($id);
+        return view('admin.trip.show', ['trip'=>$data]);
     }
 
     /**
@@ -77,7 +84,6 @@ class TripController extends Controller
     {
         //
         $data = trip::find($id);
-        //$data = trip::all();
         return view('admin.trip.edit', ['trip'=>$data]);
 
     }
@@ -92,15 +98,15 @@ class TripController extends Controller
     public function update(Request $request, Trip $trip, $id)
     {
         //
-        $data = trip::find($id);
+        $trip = trip::find($id);
+        $trip->title = $request->input('title');
         $trip->from = $request->input('from');
         $trip->to = $request->input('to');
         $trip->duration = $request->input('duration');
         $trip->description = $request->input('description');
-        $image = $request->file;
-        //$imagename = time().'.'.$image->getClientOriginalExtension();
-        //$request->file->move('image',$imagename);
-        //$trip->image = $imagename;
+        if($request->file('image')){
+            $data->image=$request->file('image')->store('image');
+        }
         $trip->save();
         return redirect('admin/trip');
     }
@@ -111,8 +117,14 @@ class TripController extends Controller
      * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Trip $trip)
+    public function destroy(Trip $trip, $id)
     {
         //
+        $data = trip::find($id);
+        if($data->image && Storage::dist('public')->exists($data->image)){
+            Storage::delete($data->image);
+        }
+        $data->delete();
+        return redirect('admin/trip');
     }
 }
