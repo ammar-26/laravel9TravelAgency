@@ -3,7 +3,7 @@
 use App\Http\controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
-use App\Http\Controllers\AdminPanel\TripController as AdminTripController;
+use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,15 +74,18 @@ Route::middleware([
 });
 
 //******* ADMIN PANEL ROUTES *******
+//Route::get('/admin', [AdminHomeController::class,'index'])->name('admin');
+
+
 Route::prefix('admin')->name('admin.')->group(function(){
 
 
     Route::get('/', [AdminHomeController::class,'index'])->name('index');
 
-    Route::prefix('trip')->name('trip.')->controller(AdminTripController::class)->group(function(){
+    Route::prefix('category')->name('category.')->controller(AdminCategoryController::class)->group(function(){
 
 
-        //******* ADMIN TRIP ROUTES *******
+        //******* ADMIN CATEGORY ROUTES *******
 
         Route::get('/', 'index')->name('index');
 

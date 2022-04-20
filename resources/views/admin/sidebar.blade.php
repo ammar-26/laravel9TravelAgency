@@ -11,45 +11,59 @@
                 <h5 class="centered">Ammar Mohamed</h5>
                 
                 <li class="mt">
-                    <a href="/admin">
-                        <i class="fa fa-dashboard"></i>
+                    <a href="{{route('admin.index')}}">
+                        <i class="fa fa-home"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li class="sub-menu">
-                    <a href="/admin/trip" >
-                        <i class="fa fa-th"></i>
-                        <span>Trips</span>
+                    <a href="{{route('admin.category.index')}}">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Reservation</span>
                     </a>
                 </li>
 
-                
                 <li class="sub-menu">
-                    <a href="/admin/trip/create">
-                        <i class="fa fa-plane"></i>
-                        <span>Add trip</span>
+                    <a href="{{route('admin.category.index')}}" >
+                        <i class="fa fa-th"></i>
+                        <span>Categories</span>
                     </a>
                 </li>
                 
                 <li class="sub-menu">
-                    <a href="/admin/trip" >
+                    <a href="{{route('admin.category.index')}}" >
+                        <i class="fa fa-cube"></i>
+                        <span>Packages</span>
+                    </a>
+                </li>
+                
+
+                <li class="sub-menu">
+                    <a href="{{route('admin.category.index')}}" >
                         <i class="fa fa-comment"></i>
                         <span>Comments</span>
                     </a>
                 </li>
 
                 <li class="sub-menu">
-                    <a href="/admin/trip" >
+                    <a href="{{route('admin.category.index')}}" >
+                        <i class="fa fa-question"></i>
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                
+
+                <li class="sub-menu">
+                    <a href="{{route('admin.category.index')}}">
                         <i class="fa fa-envelope"></i>
-                        
                         <span>Messages</span>
                     </a>
                 </li>
 
                 
                 <li class="sub-menu">
-                    <a href="/admin/trip" >
+                    <a href="{{route('admin.category.index')}}" >
                         <i class="fa fa-user"></i>
                         <span>Users</span>
                     </a>
@@ -57,7 +71,7 @@
 
                 <li class="nav-header" style="color:white">Labels</li>
                 <li class="nav-item">
-                    <a href="/admin/trip">
+                    <a href="{{route('admin.category.index')}}">
                         <i class="fa fa-gear"></i>
                         <span>Settings</span>
                     </a>

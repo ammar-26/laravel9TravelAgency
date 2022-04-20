@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('trips', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            //$table->foreign('parent_id')->nullable(); 
-            $table->string('from')->nullable();
-            $table->string('to')->nullable();
-            $table->string('duration')->nullable();
+            $table->foreign('parent_id')->nullable(); 
+            $table->string('title')->nullable();
+            $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
             $table->string('status')->nullable();
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trips');
+        Schema::dropIfExists('categories');
     }
 };
