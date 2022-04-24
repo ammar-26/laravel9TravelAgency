@@ -18,7 +18,7 @@
 							<li><a href="car.html">Car</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="contact.html">Contact</a></li>
-							<li><a href="contact.html">login</a></li>
+							<li><a href="/login">login</a></li>
 
 						</ul>
 					</nav>

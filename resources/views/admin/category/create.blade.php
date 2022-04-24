@@ -15,7 +15,7 @@ MAIN CONTENT
                 <div class="form-panel">
                     <h4 class="mb"><i class="fa fa-angle-right"></i> Category Elements</h4>
                     
-                    <form class="form-horizontal style-form" method="post" action="{{route('admin.category.store')}}">
+                    <form class="form-horizontal style-form" method="post" action="{{route('admin.category.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Title</label>
@@ -47,7 +47,7 @@ MAIN CONTENT
                         <div class="form-group" style="padding: 10px">
                             <label class="col-sm-2 col-sm-2 control-label" style="padding: 1px">Image</label>
                             <div>
-                                <input type="file" name="file" >
+                                <input type="file" name="image" >
                             </div>
                         </div>
 

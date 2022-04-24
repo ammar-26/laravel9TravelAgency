@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -42,17 +43,16 @@ class CategoryController extends Controller
     {
         //;
         //echo $request;
-        $category = new Category();
-        $category->parent_id = 0;
-        $category->title = $request->input('title');
-        $category->keywords = $request->input('keywords');
-        $category->description = $request->input('description');
-        $image = $request->file;
+        $data = new Category();
+        $data->parent_id = 0;
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
         if($request->file('image')){
-            $data->image=$request->file('image')->store('image');
+            $data->image=$request->file('image')->store('images');
         }
-        $category->status = $request->input('status');
-        $category->save();
+        $data->save();
         return redirect('/admin/category');
     }
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
     {
         //
         
-        $data = category::find($id);
+        $data = Category::find($id);
         return view('admin.category.show', ['category'=>$data]);
     }
 
@@ -79,7 +79,7 @@ class CategoryController extends Controller
     public function edit(category $category, $id)
     {
         //
-        $data = category::find($id);
+        $data = Category::find($id);
         return view('admin.category.edit', ['category'=>$data]);
 
     }
@@ -94,15 +94,15 @@ class CategoryController extends Controller
     public function update(Request $request, category $category, $id)
     {
         //
-        $category = category::find($id);
-        $category->title = $request->input('title');
-        $category->keywords = $request->input('keywords');
-        $category->description = $request->input('description');
+        $data = Category::find($id);
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
         if($request->file('image')){
-            $category->image=$request->file('image')->store('image');
+            $data->image=$request->file('image')->store('images');
         }
-        $category->status = $request->input('status');
-        $category->save();
+        $data->save();
         return redirect('admin/category');
     }
 
@@ -115,7 +115,7 @@ class CategoryController extends Controller
     public function destroy(category $category, $id)
     {
         //
-        $data = category::find($id);
+        $data = Category::find($id);
         if($data->image && Storage::dist('public')->exists($data->image)){
             Storage::delete($data->image);
         }

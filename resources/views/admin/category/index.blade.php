@@ -38,7 +38,11 @@ MAIN CONTENT
                             <td>{{$rs->id}}</td>
                             <td>{{$rs->title}}</td>
                             <td>{{$rs->description}}</td>
-                            <td>{{$rs->image}}</td>
+                            <td>
+                                @if ($rs->image)
+                                    <img src="{{storage::url($rs->image)}}">
+                                @endif
+                            </td>
                             <td><a href="{{route('admin.category.edit', ['id'=>$rs->id])}}" class="btn btn-round btn-info">Edit</a></td>
                             <td><a href="{{route('admin.category.destroy', ['id'=>$rs->id])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-round btn-danger">Delete</a></td>
                             <td><a href="{{route('admin.category.show', ['id'=>$rs->id])}}" class="btn btn-round btn-warning">Show</a></td>
