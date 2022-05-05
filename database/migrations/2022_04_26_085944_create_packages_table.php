@@ -13,18 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id')->nullable(); 
+            $table->foreignId('category_id');
+            $table->foreignId('user_id'); 
             $table->string('title')->nullable();
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('status')->nullable();
+            $table->string('detail')->nullable();
+            $table->float('price')->nullable();
+            $table->integer('passenger')->nullable();
+            $table->string('status')->nullable()->default('Unavailable');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('packages');
     }
 };

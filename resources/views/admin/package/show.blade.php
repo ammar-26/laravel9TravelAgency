@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Category : '.$data->title)
+@section('title', 'Show Package : '.$data->title)
 
 
 @section('content')
@@ -10,8 +10,8 @@ MAIN CONTENT
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper site-min-height"> 
-            <h3><i class="fa fa-angle-right"><a href="{{route('admin.category.edit', ['id'=>$data->id])}}" class="btn btn-theme">Edit Category</a>
-            <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger">Delete Category</a></i></h3>
+            <h3><i class="fa fa-angle-right"><a href="{{route('admin.package.edit', ['id'=>$data->id])}}" class="btn btn-theme">Edit Pacakge</a>
+            <a href="{{route('admin.package.destroy', ['id'=>$data->id])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger">Delete Pacakge</a></i></h3>
             <div class="col-md-12">
                 <div class="content-panel">
                     <h4><i class="fa fa-angle-right"></i>Details Data</h4>
@@ -22,14 +22,17 @@ MAIN CONTENT
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr>
                                 <td style="width:150px">Id</td>
                                 <td class="hidden-phone">{{$data->id}}</td>
                             </tr>
-                            
+
                             <tr>
-                                <td style="width:150px">Parent Id</td>
-                                <td class="hidden-phone">{{$data->parent_id}}</td>
+                                <td style="width:150px">Category</td>
+                                <td class="hidden-phone">
+                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category, $data->category->title)}}
+                                </td>
                             </tr>
                             
                             <tr>
@@ -48,12 +51,25 @@ MAIN CONTENT
                             </tr>
                             
                             <tr>
+                                <td style="width:150px">Detail</td>
+                                <td class="hidden-phone">{{$data->detail}}</td>
+                            </tr>
+                            <tr>
+                                <td style="width:150px">Price</td>
+                                <td class="hidden-phone">{{$data->price}}</td>
+                            </tr>
+                            <tr>
+                                <td style="width:150px">Passenger</td>
+                                <td class="hidden-phone">{{$data->passenger}}</td>
+                            </tr>
+                            
+                            <tr>
                                 <td style="width:150px">Status</td>
                                 <td class="hidden-phone">{{$data->status}}</td>
                             </tr>
                             
                             <tr>
-                            <td style="width:150px">Image</td>
+                                <td style="width:150px">Image</td>
                                 <td class="hidden-phone">
                                     @if ($data->image)
                                     <img src="{{Storage::url($data->image)}}" style="height: 100px">

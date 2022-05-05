@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add category')
+@section('title', 'Add Package')
 
 
 @section('content')
@@ -10,18 +10,17 @@ MAIN CONTENT
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper site-min-height"> 
-            <h3><i class="fa fa-angle-right"></i>Add Category</h3>
+            <h3><i class="fa fa-angle-right"></i>Add Package</h3>
             <div class="col-lg-12">
                 <div class="form-panel">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i> Category Elements</h4>
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Package Elements</h4>
                     
-                    <form class="form-horizontal style-form" method="post" action="{{route('admin.category.store')}}" enctype="multipart/form-data">
+                    <form class="form-horizontal style-form" method="post" action="{{route('admin.package.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Parent Category</label>
+                            <label class="col-sm-2 col-sm-2 control-label">Parent Package</label>
                             
-                            <select class="col-sm-2 col-sm-2 control-label" name="parent_id">
-                                <option value="0" selected="selected">Main Category</option>
+                            <select class="col-sm-2 col-sm-2 control-label" name="category_id">
                                 @foreach($data as $rs)
                                     <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}}</option>
                                 @endforeach
@@ -44,7 +43,27 @@ MAIN CONTENT
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Description</label>
                             <div class="col-sm-10">
-                                <input type="text" name="description" class="form-control" placeholder="descripe the category">
+                                <input type="text" name="description" class="form-control" placeholder="descripe">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Detail</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="detail">
+
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Price</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="price" class="form-control" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Passenger</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="passenger" class="form-control" value="0">
                             </div>
                         </div>
                         <div class="form-group">

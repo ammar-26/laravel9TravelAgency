@@ -32,7 +32,7 @@ MAIN SIDEBAR MENU
             </li>
             
             <li class="sub-menu">
-                <a href="{{route('admin.category.index')}}" >
+                <a href="{{route('admin.package.index')}}" >
                     <i class="fa fa-cube"></i>
                     <span>Packages</span>
                 </a>

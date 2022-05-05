@@ -4,6 +4,8 @@ use App\Http\controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
+use App\Http\Controllers\AdminPanel\AdminPackageController;
+use App\Http\Controllers\AdminPanel\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,27 +20,27 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
 
 
 //1- Do something in the route 
-Route::get('/flight.html',function(){
-    return view('welcome');
-});
+// Route::get('/flight.html',function(){
+//     return view('welcome');
+// });
 
-Route::get('/hotel.html',function(){
-    return view('welcome');
-});
+// Route::get('/hotel.html',function(){
+//     return view('welcome');
+// });
 
-Route::get('/car.html',function(){
-    return view('welcome');
-});
-
-
-Route::get('/contact.html',function(){
-    return view('welcome');
-});
+// Route::get('/car.html',function(){
+//     return view('welcome');
+// });
 
 
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+// Route::get('/contact.html',function(){
+//     return view('welcome');
+// });
+
+
+// Route::get('/hello', function () {
+//     return 'Hello World';
+// });
 
 //2- Call view in route
 
@@ -79,29 +81,37 @@ Route::middleware([
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
-
     Route::get('/', [AdminHomeController::class,'index'])->name('index');
 
-    Route::prefix('category')->name('category.')->controller(AdminCategoryController::class)->group(function(){
-
-
         //******* ADMIN CATEGORY ROUTES *******
-
+    Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function(){
         Route::get('/', 'index')->name('index');
-
         Route::get('/create', 'create')->name('create');
-
         Route::post('/store', 'store')->name('store');
-
         Route::get('/edit/{id}', 'edit')->name('edit');
-
         Route::post('/update/{id}', 'update')->name('update');
-
         Route::get('/show/{id}', 'show')->name('show');
-
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
-
     });
 
+        //******* ADMIN PACKAGE ROUTES *******
+    Route::prefix('/package')->name('package.')->controller(AdminPackageController::class)->group(function(){
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+    });
+
+    
+        //******* ADMIN PAKAGE IMAGE GALLERY ROUTES *******
+        Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function(){
+            Route::get('/{pid}', 'index')->name('index');
+            Route::post('/store/{pid}', 'store')->name('store');
+            Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
+        });
+    
 });
         
