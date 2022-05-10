@@ -15,6 +15,14 @@ class HomeController extends Controller
 
     public function setting()
     {
+        $data = Setting::first();
+        if($data==null)
+        {
+            $data = new Setting();
+            $data->title = 'Project Title';
+            $data->save();
+            $data = Setting::first();
+        }
 
         return view('admin.setting');
     }

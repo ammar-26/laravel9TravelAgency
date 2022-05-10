@@ -1,106 +1,131 @@
-<footer>
-			<div id="footer">
+<footer class="page-footer" itemprop="footer" itemscope itemtype="http://schema.org/WPFooter">
+			<div class="footer-first-section">
 				<div class="container">
-					<div class="row row-bottom-padded-md">
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>About Travel</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<div class="box-wrap" itemprop="about">
+						<header>
+							<h1>about</h1>
+						</header>
+						<p>Edulab is a great start for and education. Personnel or oganization to start the online business with 1 click</p>
+
+						<h4><a href="tel:+9779813639131"><i class="fas fa-phone"></i> +977 9813639131</a></h4>
+						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a></h4>
+						<h4><a href=""><i class="fas fa-map-marker-alt"></i>Gongabu, Kathmandu, Nepal</a></h4>
+					</div>
+
+					<div class="box-wrap">
+						<header>
+							<h1>links</h1>
+						</header>
+						<ul>
+							<li><a href="#">Teacher</a></li>
+							<li><a href="#">Courses</a></li>
+							<li><a href="#">Courses</a></li>
+							<li><a href="#">Courses</a></li>
+							<li><a href="#">Courses</a></li>
+							<li><a href="#">Courses</a></li>
+						</ul>
+					</div>
+
+					<div class="box-wrap">
+						<header>
+							<h1>recent courses</h1>
+						</header>
+						<div class="recent-course-wrap">
+							<img src="{{asset('assets')}}/img/ui-ux.jpg" alt="Ui/Ux Designing">
+							<a href=""><div class="course-name">
+								<h3>UI/UX Designer courses</h3>
+								<p><span>$50</span> $40</p>
+							</div></a>
 						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Top Flights Routes</h3>
-							<ul>
-								<li><a href="#">Manila flights</a></li>
-								<li><a href="#">Dubai flights</a></li>
-								<li><a href="#">Bangkok flights</a></li>
-								<li><a href="#">Tokyo Flight</a></li>
-								<li><a href="#">New York Flights</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Top Hotels</h3>
-							<ul>
-								<li><a href="#">Boracay Hotel</a></li>
-								<li><a href="#">Dubai Hotel</a></li>
-								<li><a href="#">Singapore Hotel</a></li>
-								<li><a href="#">Manila Hotel</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Interest</h3>
-							<ul>
-								<li><a href="#">Beaches</a></li>
-								<li><a href="#">Family Travel</a></li>
-								<li><a href="#">Budget Travel</a></li>
-								<li><a href="#">Food &amp; Drink</a></li>
-								<li><a href="#">Honeymoon and Romance</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Best Places</h3>
-							<ul>
-								<li><a href="#">Boracay Beach</a></li>
-								<li><a href="#">Dubai</a></li>
-								<li><a href="#">Singapore</a></li>
-								<li><a href="#">Hongkong</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Affordable</h3>
-							<ul>
-								<li><a href="#">Food &amp; Drink</a></li>
-								<li><a href="#">Fare Flights</a></li>
-							</ul>
+						<div class="recent-course-wrap">
+							<img src="{{asset('assets')}}/img/ui-ux.jpg" alt="Ui/Ux Designing">
+							<a href=""><div class="course-name">
+								<h3>UI/UX Designer courses</h3>
+								<p><span>$50</span> $40</p>
+							</div></a>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="#"><i class="icon-twitter2"></i></a>
-								<a href="#"><i class="icon-facebook2"></i></a>
-								<a href="#"><i class="icon-instagram"></i></a>
-								<a href="#"><i class="icon-dribbble2"></i></a>
-								<a href="#"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2016 Free Html5 <a href="#">Module</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
-						</div>
+
+					<div class="box-wrap">
+						<header>
+							<h1>quick contact</h1>
+						</header>
+						<section class="quick-contact">
+							<input type="email" name="email" placeholder="Your Email*">
+							<textarea placeholder="Type your message*"></textarea>
+							<button>send message</button>
+						</section>
 					</div>
+
+				</div>
+			</div>
+			<!-- End of box-Wrap -->
+			<div class="footer-second-section">
+				<div class="container">
+					<hr class="footer-line">
+					<ul class="social-list">
+						<li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter"></i></a></li>
+						<li><a href=""><i class="fab fa-skype"></i></a></li>
+						<li><a href=""><i class="fab fa-youtube"></i></a></li>
+						<li><a href=""><i class="fab fa-instagram"></i></a></li>
+					</ul>
+					<hr class="footer-line">
+				</div>
+			</div>
+			<div class="footer-last-section">
+				<div class="container">
+					<p>Copyright 2018 &copy; educationpro.com <span> | </span> Theme designed and developed by <a href="https://labtheme.com">Lab Theme</a></p>
 				</div>
 			</div>
 		</footer>
 
-	
+		<!-- <nav id="menu">
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li>
+					<span>COURSES</span>
+					<ul>
+						<li><a href="#/courses/child">Child</a></li>
+						<li><a href="#/courses/child">Child</a></li>
+						<li>
+							<span>Child</span>
+							<ul>
+								<li><a href="#/courses/child/grandChild">Grand Child</a></li>
+								<li><a href="#/courses/child/grandChild">Grand Child</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">gallery</a>
+					<ul>
+						<li><a href="#">Child</a></li>
+						<li><a href="#">Child</a></li>
+						<li><a href="#">Child</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">news</a>
+					<ul>
+						<li><a href="#">Child</a></li>
+						<li><a href="#">Child</a></li>
+						<li><a href="#">Child</a></li>
+					</ul>
+				</li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">contact</a></li>
+			</ul>
+		</nav> -->
 
 	</div>
-	<!-- END fh5co-page -->
-
-	</div>
-	<!-- END fh5co-wrapper -->
-
-		<!-- jQuery -->
-
-
-		<script src="{{asset('assets')}}/js/jquery.min.js"></script>
-		<!-- jQuery Easing -->
-		<script src="{{asset('assets')}}/js/jquery.easing.1.3.js"></script>
-		<!-- Bootstrap -->
-		<script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
-		<!-- Waypoints -->
-		<script src="{{asset('assets')}}/js/jquery.waypoints.min.js"></script>
-		<script src="{{asset('assets')}}/js/sticky.js"></script>
-
-		<!-- Stellar -->
-		<script src="{{asset('assets')}}/js/jquery.stellar.min.js"></script>
-		<!-- Superfish -->
-		<script src="{{asset('assets')}}/js/hoverIntent.js"></script>
-		<script src="{{asset('assets')}}/js/superfish.js"></script>
-		<!-- Magnific Popup -->
-		<script src="{{asset('assets')}}/js/jquery.magnific-popup.min.js"></script>
-		<script src="{{asset('assets')}}/js/magnific-popup-options.js"></script>
-		<!-- Date Picker -->
-		<script src="{{asset('assets')}}/js/bootstrap-datepicker.min.js"></script>
-		<!-- CS Select -->
-		<script src="{{asset('assets')}}/js/classie.js"></script>
-		<script src="{{asset('assets')}}/js/selectFx.js"></script>
-		
-		<!-- Main JS -->
-		<script src="{{asset('assets')}}/js/main.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/lightbox.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/all.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/owl.carousel.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery.flexslider.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery.rateyo.js"></script>
+	<!-- <script type="text/javascript" src="{{asset('assets')}}/js/jquery.mmenu.all.js"></script> -->
+	<!-- <script type="text/javascript" src="{{asset('assets')}}/js/jquery.meanmenu.min.js"></script> -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/custom.js"></script>
