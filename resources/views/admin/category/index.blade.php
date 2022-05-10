@@ -18,7 +18,7 @@ MAIN CONTENT
             <div class="col-lg-12">
             <div class="col-md-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i>Category Lists</h4>
+                    <h4><i class="fa fa-angle-right"></i>Category List</h4>
                     <hr>
                     <table class="table">
                         <thead>

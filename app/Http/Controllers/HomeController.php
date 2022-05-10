@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Category;
+use App\Models\Package;
 use App\Models\user;
 
 class HomeController extends Controller
@@ -27,8 +27,23 @@ class HomeController extends Controller
     }
     
     public function index(){
-        return view('home.index');
+        $sliderdata = Package::take(4)->get();
+        $packagelist1 = Package::limit(6)->get();
+        return view('home.index',[
+            'sliderdata' => $sliderdata ,
+            'packagelist1' => $packagelist1
+        ]);
     }
+
+    
+    public function package($id)
+    {
+        $data=Package::find($id);
+        return view('home.package',[
+            'data'=>$data,
+        ]);
+    }
+
 
     public function test(){
         return view('home.test');

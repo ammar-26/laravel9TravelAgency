@@ -71,7 +71,7 @@ MAIN SIDEBAR MENU
 
             <li class="nav-header" style="color:white">Labels</li>
             <li class="nav-item">
-                <a href="{{route('admin.category.index')}}">
+                <a href="{{route('admin.setting')}}">
                     <i class="fa fa-gear"></i>
                     <span>Settings</span>
                 </a>

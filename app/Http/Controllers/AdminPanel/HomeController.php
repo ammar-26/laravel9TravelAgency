@@ -8,8 +8,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
-    public function index(){
-        //echo "My Admin Panel";
+    public function index()
+    {
         return view('admin.index');
     }
+
+    public function setting()
+    {
+
+        return view('admin.setting');
+    }
+
 }

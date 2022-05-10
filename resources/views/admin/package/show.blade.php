@@ -52,7 +52,7 @@ MAIN CONTENT
                             
                             <tr>
                                 <td style="width:150px">Detail</td>
-                                <td class="hidden-phone">{{$data->detail}}</td>
+                                <td class="hidden-phone">{!! $data->detail !!}</td>
                             </tr>
                             <tr>
                                 <td style="width:150px">Price</td>

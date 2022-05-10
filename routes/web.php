@@ -64,6 +64,8 @@ Route::get('/param/{id}/{number}', [HomeController::class,'param'])->name('test'
 //6- Route with post 
 Route::post('/save', [HomeController::class,'save'])->name('save');
 
+Route::get('/package/{id}', [HomeController::class,'package'])->name('package');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -83,7 +85,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::get('/', [AdminHomeController::class,'index'])->name('index');
 
-        //******* ADMIN CATEGORY ROUTES *******
+        //******* ADMIN GENERAL ROUTES *******
+        Route::get('/setting', [AdminHomeController::class,'setting'])->name('setting');
+
+    //******* ADMIN CATEGORY ROUTES *******
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function(){
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');

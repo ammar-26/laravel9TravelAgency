@@ -9,6 +9,34 @@
 
     @section('content')
 
+<div id="fh5co-tours" class="fh5co-section-gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+				<h3>Hot Tours</h3>
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($packagelist1 as $rs)	
+				<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+					<div href="#"><img src="{{Storage::url($rs->image)}}" style="height:250px; width:520px" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<div class="desc">
+							<span></span>
+							<h3>{{$rs->title}}</h3>
+							<span>3 nights + Flight 5*Hotel</span>
+							<span class="price">{{$rs->price}}</span>
+							<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
+						</div>
+					</div>
+				</div>
+			@endforeach
+				<div class="col-md-12 text-center animate-box">
+					<p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Offers <i class="icon-arrow-right22"></i></a></p>
+				</div>
+		</div>
+	</div>
+</div>
 
 		<div id="fh5co-features">
 			<div class="container">

@@ -18,7 +18,15 @@
 							<li><a href="car.html">Car</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="contact.html">Contact</a></li>
-							<li><a href="/login">login</a></li>
+							<li>
+								@if ($usertype = 0) 
+								<a href="/login">profil</a>
+								@endif
+								<a href="/login">user</a>
+								<ul class="fh5co-sub-menu">
+									<li><a href="#">profile</a></li>
+								</ul>
+							</li>
 
 						</ul>
 					</nav>
