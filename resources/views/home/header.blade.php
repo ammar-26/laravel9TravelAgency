@@ -3,7 +3,7 @@
 				<div class="container">
 					<div class="top-header-left">
 						<div class="top-header-block">
-							<a href="mailto:info@educationpro.com" itemprop="email"><i class="fas fa-envelope"></i> info@educationpro.com</a>
+							<a href="mailto:info@travelpro.com" itemprop="email"><i class="fas fa-envelope"></i> info@travelpro.com</a>
 						</div>
 						<div class="top-header-block">
 							<a href="tel:+9779813639131" itemprop="telephone"><i class="fas fa-phone"></i> +977 9813639131</a>
@@ -32,7 +32,7 @@
 				<div class="container">
 					<div class="logo-wrap" itemprop="logo">
 						<img src="{{asset('assets')}}/img/site-logo.jpg" alt="Logo Image" style="width: 115px; height:62px">
-						<!-- <h1>Education</h1> -->
+						<!-- <h1>travel</h1> -->
 					</div>
 					<div class="nav-wrap">
 						<nav class="nav-desktop">

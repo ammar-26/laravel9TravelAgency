@@ -36,17 +36,17 @@
 		<!-- Banner Close -->
 		<div class="page-heading">
 			<div class="container">
-				<h2>popular courses</h2>
+				<h2>popular Packages</h2>
 			</div>
 		</div>
-		<!-- Popular courses End -->
+		<!-- Popular Packages End -->
 		<div class="learn-courses">
 			<div class="container">
 				<div class="courses">
 					<div class="owl-one owl-carousel">
-						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap" itemprop="image"><img src="{{asset('assets')}}/img/course-pic.jpg" alt="courses picture"></div>
-								<a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Package">
+							<div class="img-wrap" itemprop="image"><img src="{{asset('assets')}}/img/tavel-package.jpg" alt="Packages picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Best Packages >>></a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
@@ -57,9 +57,9 @@
 							</div>
 						</div>
 
-						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="{{asset('assets')}}/img/course-pic.jpg" alt="courses picture"></div>
-								<a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Package">
+							<div class="img-wrap"  itemprop="image"><img src="{{asset('assets')}}/img/tavel-package.jpg" alt="package picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Best Packages >>></a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
@@ -70,9 +70,9 @@
 							</div>
 						</div>
 
-						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="{{asset('assets')}}/img/course-pic.jpg" alt="courses picture"></div>
-								<a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Package">
+							<div class="img-wrap"  itemprop="image"><img src="{{asset('assets')}}/img/tavel-package.jpg" alt="package picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Best Packages >>></a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
@@ -83,9 +83,9 @@
 							</div>
 						</div>
 
-						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="{{asset('assets')}}/img/course-pic.jpg" alt="courses picture"></div>
-								<a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Package">
+							<div class="img-wrap"  itemprop="image"><img src="{{asset('assets')}}/img/tavel-package.jpg" alt="package picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Best Packages >>></a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
@@ -99,7 +99,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Learn courses End -->
+		<!-- Learn Packages End -->
 		<section class="whyUs-section">
 			<div class="container">
 				<div class="featured-points">

@@ -5,10 +5,10 @@
 						<header>
 							<h1>about</h1>
 						</header>
-						<p>Edulab is a great start for and education. Personnel or oganization to start the online business with 1 click</p>
+						<p>Edulab is a great start for and travel. Personnel or oganization to start the online business with 1 click</p>
 
 						<h4><a href="tel:+9779813639131"><i class="fas fa-phone"></i> +977 9813639131</a></h4>
-						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a></h4>
+						<h4><a href="mailto:info@travelpro.com"><i class="fas fa-envelope"></i> info@travelpro.com</a></h4>
 						<h4><a href=""><i class="fas fa-map-marker-alt"></i>Gongabu, Kathmandu, Nepal</a></h4>
 					</div>
 
@@ -75,7 +75,7 @@
 			</div>
 			<div class="footer-last-section">
 				<div class="container">
-					<p>Copyright 2018 &copy; educationpro.com <span> | </span> Theme designed and developed by <a href="https://labtheme.com">Lab Theme</a></p>
+					<p>Copyright 2018 &copy; travelpro.com <span> | </span> Theme designed and developed by <a href="https://labtheme.com">Lab Theme</a></p>
 				</div>
 			</div>
 		</footer>
