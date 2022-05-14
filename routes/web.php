@@ -44,12 +44,15 @@ use App\Http\Controllers\AdminPanel\ImageController;
 
 //2- Call view in route
 
+
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
 //3- Call Controller Function
 
+// Route::get('/home',[HomeController::class, 'redirect']);
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::get('/index.html', [HomeController::class,'index'])->name('home');

@@ -21,8 +21,8 @@
 							</ul>
 						</div>
 						<div class="login-block">
-							<a href="">Login /</a>
-							<a href="">Register</a>
+							<a href="/login">Login /</a>
+							<a href="/register">Register</a>
 						</div>
 					</div>
 				</div>
