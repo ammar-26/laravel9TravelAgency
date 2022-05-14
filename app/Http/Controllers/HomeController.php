@@ -27,7 +27,7 @@ class HomeController extends Controller
     }
     
     public function index(){
-        $sliderdata = Package::take(4)->get();
+        $sliderdata = Package::limit(4)->get();
         $packagelist1 = Package::limit(6)->get();
         return view('home.index',[
             'sliderdata' => $sliderdata ,
