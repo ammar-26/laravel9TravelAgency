@@ -70,6 +70,7 @@ Route::post('/save', [HomeController::class,'save'])->name('save');
 Route::get('/package/{id}', [HomeController::class,'package'])->name('package');
 
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

@@ -12,6 +12,11 @@ class HomeController extends Controller
 {
     //
     
+    public static function maincategorylist(){
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+
+
     public function redirect(){
         if(Auth::id()){
             if(Auth::user()->usertype == '0'){
@@ -30,7 +35,7 @@ class HomeController extends Controller
         $sliderdata = Package::limit(4)->get();
         $packagelist1 = Package::limit(6)->get();
         return view('home.index',[
-            'sliderdata' => $sliderdata ,
+            'sliderdata' => $sliderdata,
             'packagelist1' => $packagelist1
         ]);
     }

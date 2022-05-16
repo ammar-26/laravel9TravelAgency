@@ -3,10 +3,10 @@
 @section('title', 'Travel Agency Project')
 
 
-
 @section('content')
 
 
-    Package page: {{$data->title}}
+    package page: {{$data->title}}
+
 
 @endsection
