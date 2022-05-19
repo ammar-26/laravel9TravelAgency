@@ -1,15 +1,20 @@
 @extends('layouts.frontbase')
 
-@section('title', 'Travel Agency Project')
+@section('title', 'travel')
+<!-- @section('title', $setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+@section('icon', Storage::url($setting->icon)) -->
+
 
 
 @section('slider')
     @include('home.slider')
 @endsection
 
-    @section('content')
+@section('content')
 
-	<!-- <div class="banner">
+		<!-- <div class="banner">
 			<div class="owl-five owl-carousel owl-theme">
 	            <div class="item-video">
             		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -31,7 +36,7 @@
 	            <div class="item-video">
 	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	            </div>
-        </div>
+        	</div>
 		</div> -->
 		<!-- Banner Close -->
 		<div class="page-heading">
@@ -47,9 +52,9 @@
 						
 
 						@foreach($packagelist1 as $rs)
-						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Package">
+						<div class="box-wrap" itemprop="event" itemscope itemtype="https://schema.org/Package">
 							<div class="img-wrap" itemprop="image"><img src="{{Storage::url($rs->image)}}" style="width:800px; height:300px" alt="Packages picture"></div>
-								<a href="#" class="learn-desining-banner" itemprop="name">{{$rs->title}} >>></a>
+								<a href="#" class="learn-desining-banner" itemprop="name"> {{$rs->title}}</a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
@@ -74,7 +79,7 @@
 						<li><i class="fas fa-book"></i> free books for students</li>
 						<li><i class="fas fa-money-check-alt"></i> affordable fees</li>
 						<li><i class="fas fa-chalkboard-teacher"></i> experienced teachers</li>
-						<li> <i class="fas fa-book"></i> free books for students</li>
+						<li><i class="fas fa-book"></i> free books for students</li>
 					</ul>
 				</div>
 				<div class="whyus-wrap">
@@ -271,7 +276,7 @@
 					</div>
 
 					<div id="slider" class="flexslider">
-	  					<ul class="slides">
+						<ul class="slides">
 						    <li>
 						    	<div class="testimonial-holder" itemprop="description">
 						    		<strong class="title">Amazing service and amazing team. Thank you!</strong>
@@ -328,7 +333,7 @@
 						    		<div class="rateYo"></div>
 						    	</div>
 						    </li>
-	  					</ul>
+						</ul>
 					</div>
 				</div>
 			</div> -->

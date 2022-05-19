@@ -1,19 +1,14 @@
 <div class="main-header">
 				<div class="container">
-				@php
-					$mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
-				@endphp
-
 					<div class="logo-wrap" itemprop="logo">
-						<img src="{{asset('assets')}}/img/site-logo.jpg" alt="Logo Image" style="width: 115px; height:62px">
-						<!-- <h1>travel</h1> -->
+						<img src="{{asset('assets')}}/img/site-logo.jpg" style="width: 100px; height: 60px" alt="Logo Image">
+						<!-- <h1>Education</h1> -->
 					</div>
 					<div class="nav-wrap">
 						<nav class="nav-desktop">
 							<ul class="menu-list">
-								@foreach ($mainCategories as $rs)
 								<li><a href="#">Home</a></li>
-								<li class="menu-parent">Package
+								<li class="menu-parent">Courses
 									<ul class="sub-menu">
 										<li><a href="#">Child</a></li>
 										<li><a href="#">Child</a></li>
@@ -45,29 +40,3 @@
 					</div>
 				</div>
 			</div>
-
-<!-- <div class="banner">
-			<div class="owl-five owl-carousel owl-theme">
-	            <div class="item-video">
-            		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            		</iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/0bfk90rWV9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-	            <div class="item-video">
-            		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            		</iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/0bfk90rWV9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-          </div>
-		</div> -->
-		<!-- Banner Close -->

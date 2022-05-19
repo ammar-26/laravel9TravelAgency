@@ -9,3 +9,4 @@ class setting extends Model
 {
     use HasFactory;
 }
+

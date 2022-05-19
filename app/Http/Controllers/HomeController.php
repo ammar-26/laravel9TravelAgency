@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Setting;
 use App\Models\Category;
 use App\Models\Package;
 use App\Models\user;
@@ -32,9 +33,14 @@ class HomeController extends Controller
     }
     
     public function index(){
+        $page = 'home';
         $sliderdata = Package::limit(4)->get();
         $packagelist1 = Package::limit(6)->get();
+        $setting = Setting::first();
+
         return view('home.index',[
+            'setting' =>$setting,
+            'page' =>$page,
             'sliderdata' => $sliderdata,
             'packagelist1' => $packagelist1
         ]);
