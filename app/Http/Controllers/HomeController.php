@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\Setting;
 use App\Models\Category;
 use App\Models\Package;
 use App\Models\user;
+
+
 
 class HomeController extends Controller
 {
@@ -33,14 +36,12 @@ class HomeController extends Controller
     }
     
     public function index(){
-        $page = 'home';
         $sliderdata = Package::limit(4)->get();
         $packagelist1 = Package::limit(6)->get();
         $setting = Setting::first();
 
         return view('home.index',[
             'setting' =>$setting,
-            'page' =>$page,
             'sliderdata' => $sliderdata,
             'packagelist1' => $packagelist1
         ]);
@@ -49,9 +50,13 @@ class HomeController extends Controller
     
     public function package($id)
     {
-        $data=Package::find($id);
-        return view('home.package',[
-            'data'=>$data,
+        $data = Package::find($id);
+        $packagelist1 = Package::limit(6)->get();
+        $images = DB::table('images')->where('package_id', $id)->get();
+        return view('home.package', [
+            'data' => $data,
+            'images' => $images,
+            'packagelist1' => $packagelist1
         ]);
     }
 

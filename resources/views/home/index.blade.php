@@ -54,7 +54,7 @@
 						@foreach($packagelist1 as $rs)
 						<div class="box-wrap" itemprop="event" itemscope itemtype="https://schema.org/Package">
 							<div class="img-wrap" itemprop="image"><img src="{{Storage::url($rs->image)}}" style="width:800px; height:300px" alt="Packages picture"></div>
-								<a href="#" class="learn-desining-banner" itemprop="name"> {{$rs->title}}</a>
+								<a href="{{route('package', ['id'=>$rs->id])}}" class="learn-desining-banner" itemprop="name"> {{$rs->title}}</a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">

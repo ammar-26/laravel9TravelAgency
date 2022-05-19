@@ -38,7 +38,6 @@
 
         
         @section('slider')
-            @include("home.slider")
         @show
 
 
