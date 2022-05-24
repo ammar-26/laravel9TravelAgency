@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('email')->nullable;
             $table->string('smtpserver')->nullable;
             $table->string('smtpmail')->nullable;
-            $table->string('stmppassword')->nullable;
-            $table->integer('stmpport')->nullable->default(0);
+            $table->string('smtppassword')->nullable;
+            $table->integer('smtpport')->nullable->default(0);
             $table->string('facebook')->nullable;
             $table->string('instagram')->nullable;
             $table->string('twitter')->nullable;

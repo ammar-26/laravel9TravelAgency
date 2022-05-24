@@ -36,11 +36,13 @@ class HomeController extends Controller
     }
     
     public function index(){
+        $page = 'home';
         $sliderdata = Package::limit(4)->get();
         $packagelist1 = Package::limit(6)->get();
         $setting = Setting::first();
 
         return view('home.index',[
+            'page' => $page,
             'setting' =>$setting,
             'sliderdata' => $sliderdata,
             'packagelist1' => $packagelist1

@@ -1,8 +1,10 @@
 <div class="main-header">
 				<div class="container">
 					<div class="logo-wrap" itemprop="logo">
-						<img src="{{asset('assets')}}/img/site-logo.jpg" style="width: 100px; height: 60px" alt="Logo Image">
-						<!-- <h1>Education</h1> -->
+						<a href= "/home">
+							<img src="{{asset('assets')}}/img/site-logo.jpg" style="width: 100px; height: 60px" alt="Logo Image">
+							</a>
+							<!-- <h1>Education</h1> -->
 					</div>
 					<div class="nav-wrap">
 						<nav class="nav-desktop">

@@ -129,3 +129,4 @@
 	<!-- <script type="text/javascript" src="{{asset('assets')}}/js/jquery.mmenu.all.js"></script> -->
 	<!-- <script type="text/javascript" src="{{asset('assets')}}/js/jquery.meanmenu.min.js"></script> -->
 	<script type="text/javascript" src="{{asset('assets')}}/js/custom.js"></script>
+	
