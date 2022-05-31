@@ -8,18 +8,23 @@
 		</div>
 		<div class="nav-wrap">
 			<nav class="nav-desktop">
+				@php
+					$mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+				@endphp
 				<ul class="menu-list">
-					<li><a href="#">Home</a></li>
-					<li class="menu-parent">Courses
+					<li><a href="/home">Home</a></li>
+					<li class="menu-parent">Categories
 						<ul class="sub-menu">
-							<li><a href="#">Child</a></li>
-							<li><a href="#">Child</a></li>
-							<li class="menu-parent">Child
-								<ul class="sub-menu">
-									<li><a href="">Grand-child</a></li>
-									<li><a href="">Grand-child</a></li>
-								</ul>
+
+						@foreach ($mainCategories as $rs)
+							<li class="menu-parent">{{$rs->title}}
+
+									@if(count($rs->children))
+										@include('home.categorytree',['children' => $rs->children])
+									@endif
+
 							</li>
+						@endforeach
 						</ul>
 					</li>
 					<li class="menu-parent">News

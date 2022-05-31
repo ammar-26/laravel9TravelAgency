@@ -8,8 +8,14 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
 
 
 @endsection
@@ -193,7 +199,19 @@ MAIN CONTENT
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">References</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" id="references" name="references">{!! $data->references !!}</textarea>
+                                    <textarea class="form-control" id="detail" name="references">
+                                        {!! $data->references !!}
+                                    </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create(document.querySelector('#detail'))
+                                            .then(editor=>{
+                                                console.log(editor);
+                                            })
+                                            .catch(error=>{
+                                                console.error(error);
+                                            });
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -211,12 +229,21 @@ MAIN CONTENT
 
 @endsection
 @section('foot')
-    <script src="https:://cdn.jsdeliver.net/npm/summernote@0.8.18/dist/summernot.min.js"></script>
+    <!-- <script src="https:://cdn.jsdeliver.net/npm/summernote@0.8.18/dist/summernot.min.js"></script>
 
     <script>
         $(function() {
             //summernote
             $('.textarea').summernote()
         })
+    </script> -->
+
+    <!-- summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script type="text/javascript">
+        $('.references').summernote({
+        });
     </script>
+
 @endsection

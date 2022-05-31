@@ -74,6 +74,7 @@ Route::get('/param/{id}/{number}', [HomeController::class,'param'])->name('test'
 Route::post('/save', [HomeController::class,'save'])->name('save');
 
 Route::get('/package/{id}', [HomeController::class,'package'])->name('package');
+Route::get('/categorypackages/{id}/{slug}', [HomeController::class,'categorypackages'])->name('categorypackages');
 
 
 
