@@ -52,10 +52,16 @@ Route::get('/welcome', function () {
 
 //3- Call Controller Function
 
-// Route::get('/home',[HomeController::class, 'redirect']);
+  //******* ADMIN CATEGORY ROUTES *******
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/home', [HomeController::class,'index'])->name('home');
-Route::get('/index.html', [HomeController::class,'index'])->name('home');
+Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/references', [HomeController::class,'references'])->name('references');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+
+
+
+
 
 //4- Route-> Controller->View
 

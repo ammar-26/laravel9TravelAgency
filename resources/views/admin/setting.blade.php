@@ -214,10 +214,9 @@ MAIN CONTENT
     <script src="https:://cdn.jsdeliver.net/npm/summernote@0.8.18/dist/summernot.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('#aboutus').summernote();
-            $('#contact').summernote();
-            $('#references').summernote();
-        });
+        $(function() {
+            //summernote
+            $('.textarea').summernote()
+        })
     </script>
 @endsection
