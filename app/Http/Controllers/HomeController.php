@@ -86,10 +86,7 @@ class HomeController extends Controller
 
     public function categorypackages($id)
     {
-        echo "hi bitch";
-        exit();
-
-        $category = Package::find($id);
+        $category = Category::find($id);
         $packages = DB::table('packages')->where('category_id', $id)->get();
         return view('home.categorypackages', [
             'category' => $category,

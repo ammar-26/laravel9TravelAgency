@@ -1,7 +1,7 @@
 <div class="main-header">
 	<div class="container">
 		<div class="logo-wrap" itemprop="logo">
-			<a href= "/home">
+			<a href= "{{route('home')}}">
 				<img src="{{asset('assets')}}/img/site-logo.jpg" style="width: 100px; height: 60px" alt="Logo Image">
 				</a>
 				<!-- <h1>Education</h1> -->
@@ -12,7 +12,7 @@
 					$mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
 				@endphp
 				<ul class="menu-list">
-					<li><a href="/home">Home</a></li>
+					<li><a href="{{route('home')}}">Home</a></li>
 					<li class="menu-parent">Categories
 						<ul class="sub-menu">
 

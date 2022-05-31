@@ -52,14 +52,16 @@
 
 						@foreach($packagelist1 as $rs)
 						<div class="box-wrap" itemprop="event" itemscope itemtype="https://schema.org/Package">
-							<div class="img-wrap" itemprop="image"><img src="{{Storage::url($rs->image)}}" style="width:800px; height:300px" alt="Packages picture"></div>
+							<div class="img-wrap" itemprop="image">
+								<img src="{{Storage::url($rs->image)}}" style="width:800px; height:300px" alt="Packages picture">
+							</div>
 								<a href="{{route('package', ['id'=>$rs->id])}}" class="learn-desining-banner" itemprop="name"> {{$rs->title}}</a>
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
 									<p><span>Duration:</span> 4 Years</p>
 									<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-									<p><span>Fee:</span> 4,00,000</p>
+									<p><span>Fee:</span> {{$rs->price}}</p>
 								</section>
 							</div>
 						</div>
