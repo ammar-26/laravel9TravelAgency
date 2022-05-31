@@ -12,21 +12,27 @@
     <div class="container">
         <div class="people-info-wrap">
             <h2>leave us your info</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.</p>
-            <form>
-                <span>
-                <input type="text" placeholder="Full Name*" class="input- name">
-                <input type="email" placeholder="Email*" class="input- email">
-                </span>
-                <input type="text" placeholder="Phone*" class="input- phone">
-                <textarea placeholder="Messages*" class="input-message">
-                    
-                </textarea>
-                <input type="submit" value="submit now">
+            <form action="{{route('storemessage')}}" method="post">
+                @csrf
+                <div class="form-group">
+                    <input class="input-  " type="text" name ="name" placeholder="Name & Surname">
+                </div>
+                <div class="form-group">
+                    <input class="input-  " type="text" name ="phone" placeholder="phone">
+                </div>
+                <div class="form-group">
+                    <input class="input-  " type="tel" name ="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <input class="input-  " type="text" name ="subject" placeholder="subject">
+                </div>
+                <div class="form-group">
+                    <textarea class="input-  " type="text" name ="message" placeholder="Your Message"></textarea>
+                </div>
+                <div class="form-group">
+                    <input class="input" type="submit" value="Send Message">
+                </div>
+                
             </form>
         </div>
 

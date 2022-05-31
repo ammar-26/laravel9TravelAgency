@@ -71,6 +71,19 @@ class HomeController extends Controller
         ]);
     }
 
+    public function storemessage(){
+        $data = new Message();
+        $data->name = $request->input( 'name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input( 'phone');
+        $data->subject = $request->input( 'subject');
+        $data->message = $request->input('message');
+        $data->ip = $request->ip();
+        $data->save();
+
+        return redirect()->route( route: 'contact')->with('info', 'Your message has been sent, Thank you.');
+    }
+
     
     public function package($id)
     {
