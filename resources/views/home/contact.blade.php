@@ -12,6 +12,7 @@
     <div class="container">
         <div class="people-info-wrap">
             <h2>leave us your info</h2>
+            @include('home.messages')
             <form action="{{route('storemessage')}}" method="post">
                 @csrf
                 <div class="form-group">

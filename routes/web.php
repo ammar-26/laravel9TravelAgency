@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 use App\Http\Controllers\AdminPanel\AdminPackageController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -131,6 +133,15 @@ Route::prefix('admin')->name('admin.')->group(function(){
             Route::get('/{pid}', 'index')->name('index');
             Route::post('/store/{pid}', 'store')->name('store');
             Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
+        });
+    
+    
+        //******* ADMIN MESSAGE ROUTES *******
+        Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function(){
+            Route::get('/', 'index')->name('index');
+            Route::get('/show/{id}', 'show')->name('show');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/destroy/{id}', 'destroy')->name('destroy');
         });
     
 });

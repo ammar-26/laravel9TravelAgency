@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Setting;
+use App\Models\Message;
 use App\Models\Category;
 use App\Models\Package;
 use App\Models\user;
@@ -71,7 +72,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function storemessage(){
+    public function storemessage(Request $request){
         $data = new Message();
         $data->name = $request->input( 'name');
         $data->email = $request->input('email');

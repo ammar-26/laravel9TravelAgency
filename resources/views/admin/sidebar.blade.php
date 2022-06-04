@@ -55,7 +55,7 @@ MAIN SIDEBAR MENU
             
 
             <li class="sub-menu">
-                <a href="{{route('admin.category.index')}}">
+                <a href="{{route('admin.message.index')}}">
                     <i class="fa fa-envelope"></i>
                     <span>Messages</span>
                 </a>
