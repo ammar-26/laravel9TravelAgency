@@ -99,7 +99,7 @@ class AdminPackageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\package  $package
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, package $package, $id)

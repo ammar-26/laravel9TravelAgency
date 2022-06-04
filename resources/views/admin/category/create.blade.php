@@ -51,8 +51,8 @@ MAIN CONTENT
                             <label class="col-sm-2 col-sm-2 control-label">Status</label>
                             <select class="col-sm-2 col-sm-2 control-label" name="status" >
                                 <option>---select---</option>
-                                <option value="Available">Available</option>
-                                <option value="Unavailable">Unavailable</option>
+                                <option value="Available">True</option>
+                                <option value="Unavailable">False</option>
                             </select>
                         </div>
                         <div class="form-group" style="padding: 10px">

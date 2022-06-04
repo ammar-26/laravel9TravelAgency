@@ -47,7 +47,7 @@ MAIN SIDEBAR MENU
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('admin.category.index')}}" >
+                <a href="{{route('admin.faq.index')}}" >
                     <i class="fa fa-question"></i>
                     <span>FAQ</span>
                 </a>

@@ -85,8 +85,8 @@ MAIN CONTENT
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Status</label>
                             <select type="text" name="status" class="col-sm-2 col-sm-2 control-label" value="{{$data->status}}">
-                                <option>Available</option>
-                                <option>Unavailable</option>
+                                <option>True</option>
+                                <option>False</option>
                             </select>
                         </div>
                         <div class="form-group" style="padding: 10px">
