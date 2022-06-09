@@ -10,9 +10,11 @@
 <div class="section">
     <div class="container">
         <div class="row">
-
-            {!! $setting->references !!}
-
+            <section class="contact-page-section">
+                <div class="people-info-wrap">
+                    {!! $setting->references !!}
+                </div>
+            </section>
         </div>
     </div>
 </div> 

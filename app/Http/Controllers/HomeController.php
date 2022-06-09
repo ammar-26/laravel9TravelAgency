@@ -9,6 +9,7 @@ use App\Models\Setting;
 use App\Models\Message;
 use App\Models\Category;
 use App\Models\Package;
+use App\Models\Faq;
 use App\Models\user;
 
 
@@ -71,6 +72,17 @@ class HomeController extends Controller
             'setting' =>$setting,
         ]);
     }
+
+    
+    public function faq(){
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        return view('home.faq',[
+            'setting' =>$setting,
+            'datalist' =>$datalist
+        ]);
+    }
+
 
     public function storemessage(Request $request){
         $data = new Message();

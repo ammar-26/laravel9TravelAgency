@@ -9,14 +9,15 @@
 
 <div class="section">
     <div class="container">
-        <div class="row">
+        <section class="contact-page-section">
+            <div class="people-info-wrap">
 
-            {!! $setting->aboutus !!}
+                {!! $setting->aboutus !!}
 
-        </div>
+            </div>
+        </section>
     </div>
 </div> 
-
 
 
 
