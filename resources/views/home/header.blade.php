@@ -20,9 +20,18 @@
 								<li><a href=""><i class="fab fa-skype"></i></a></li>
 							</ul>
 						</div>
+						
+							@auth
+							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+								<strong class="text-uppercase" style="text-color: white">{{Auth::user()->name}}</strong>
+							</div>
+							<a href="/logoutuser">Logout</a>
+							@endauth
 						<div class="login-block">
-							<a href="">Login /</a>
-							<a href="">Register</a>
+							@guest
+							<a href="/loginuser">Login /</a>
+							<a href="/registeruser">Register</a>
+							@endguest
 						</div>
 					</div>
 				</div>
