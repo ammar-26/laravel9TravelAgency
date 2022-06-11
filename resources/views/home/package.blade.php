@@ -28,7 +28,7 @@
                 <div class="item active">
                     <img src="{{Storage::url($data->image)}}" style="width: 800px; height : 500px">
                 </div>
-                @foreach ( $images as $rs)
+                @foreach ($images as $rs)
                 <div class="item">
                     <img src="{{Storage::url($rs->image)}}" style="width: 800px; height: 500px">
                 </div>
@@ -54,8 +54,21 @@
                 </div>
 
                 <div class="course-box">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <p>44 students/ class</p>
+                    <div>
+                        @php
+                            $average = $data->comment->average('rate');
+                        @endphp
+                        
+                            <div class="review-rating ">
+                            {{number_format($average, 2)}}
+                                <i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<2) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<3) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<4) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($average<5) -o empty @endif"></i>
+                            </div>
+                    <a href="#"> {{$data->comment->count('id')}} Review(s) / Add Review</a>
+                    </div>
                 </div>
 
                 <div class="course-box">
@@ -102,92 +115,54 @@
         </main>
         <aside>
             <div class="reserve-course">
-                <h2>Reserve this package</h2>
-                <form>
-                    <input type="text" placeholder="Your Name*" required>
-                    <input type="email" name="userEmail" placeholder="Your Email Address..." required>
-                    <input type="text" placeholder="Your Occupation*" required>
-                    <input type="text" placeholder="Choose package*" required>
-                    <textarea placeholder="Write your message"></textarea>
-                    <input type="submit" value="Submit">
+                @include('home.messages')
+                <h2>Leave your comment here</h2>
+                <form action="{{route('storecomment')}}" method="post">
+                    @csrf
+                    <input type="hidden" name="package_id" value="{{$data->id}}">
+                    <input type="text" name="subject" placeholder="subject">
+                    <textarea name="comment" placeholder="Write your comment"></textarea>
+                    <div class="input-rating">
+                        <strong class="text-uppercase">Your rating: </strong>
+                        <div class="stars">
+                            <input type="radio" id="star5" name="rate" value="5"><label for="star5"></label>
+                            <input type="radio" id="star4" name="rate" value="4"><label for="star4"></label>
+                            <input type="radio" id="star3" name="rate" value="3"><label for="star3"></label>
+                            <input type="radio" id="star2" name="rate" value="2"><label for="star2"></label>
+                            <input type="radio" id="star1" name="rate" value="1"><label for="star1"></label>
+                        </div>
+                    </div>
+                    @auth
+                        <input type="submit" value="Submit">
+                    @else
+                        <a href="/login" class="btn btn-round btn-warning"> For submit your comment, please login </a>
+                    @endauth
                 </form>
             </div>
             <!-- New Letter Ends -->
             <div class="recent-post">
-                <h2>trainers</h2>
-                <div class="post">
-                    <div class="post-wrap">
-                        <div class="img-wrap">
-                            <img src="images/recent-post-img.jpg" alt="Post Images">
+                <h2>Review({{$data->comment->count('id')}})</h2>
+                @foreach($reviews as $rs)
+                    <!-- <div class="post"> -->
+                    <div class="single-review">
+                        <div class="review-heading">                
+                            <div><a href="#"><i class="fa fa-user-o"></i> {{$rs->user->name}} </a></div>
+                            <div><a href="#"><i class="fa fa-user-o"></i> {{$rs->created_at}} </a></div>
+                            <div class="review-rating pull-right">
+                                <i class="fa fa-star @if ($rs->rate<1) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($rs->rate<2) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($rs->rate<3) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($rs->rate<4) -o empty @endif"></i>
+                                <i class="fa fa-star @if ($rs->rate<5) -o empty @endif"></i>
+                            </div>
                         </div>
-                        <div class="post-content">
-                            <a href="#">
-                                <h3>Bibek Basnet</h3>
-                                <p>Web Developer</p>
-                            </a>
-                            <span>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </span>
+                        <div class="review-body">
+                            <strong>{{$rs->subject}}</strong>
+                            <p>{{$rs->comment}}</p>
                         </div>
                     </div>
+                @endforeach
 
-                    <div class="post-wrap">
-                        <div class="img-wrap">
-                            <img src="images/recent-post-img.jpg" alt="Post Images">
-                        </div>
-                        <div class="post-content">
-                            <a href="#">
-                                <h3>Bibek Basnet</h3>
-                                <p>Web Developer</p>
-                            </a>
-                            <span>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="post-wrap">
-                        <div class="img-wrap">
-                            <img src="images/recent-post-img.jpg" alt="Post Images">
-                        </div>
-                        <div class="post-content">
-                            <a href="#">
-                                <h3>Bibek Basnet</h3>
-                                <p>Web Developer</p>
-                            </a>
-                            <span>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="post-wrap">
-                        <div class="img-wrap">
-                            <img src="images/recent-post-img.jpg" alt="Post Images">
-                        </div>
-                        <div class="post-content">
-                            <a href="#">
-                                <h3>Bibek Basnet</h3>
-                                <p>Web Developer</p>
-                            </a>
-                            <span>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- Recent Post Close -->
         </aside>

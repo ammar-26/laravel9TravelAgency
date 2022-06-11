@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminPanel\AdminPackageController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
+use App\Http\Controllers\AdminPanel\CommentController;
 
 
 /*
@@ -23,31 +24,13 @@ use App\Http\Controllers\AdminPanel\FaqController;
 
 
 //1- Do something in the route 
-// Route::get('/flight.html',function(){
-//     return view('welcome');
-// });
 
-// Route::get('/hotel.html',function(){
-//     return view('welcome');
-// });
-
-// Route::get('/car.html',function(){
-//     return view('welcome');
-// });
-
-
-// Route::get('/contact.html',function(){
-//     return view('welcome');
-// });
-
-
-// Route::get('/hello', function () {
-//     return 'Hello World';
-// });
 
 //2- Call view in route
 
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -63,6 +46,7 @@ Route::get('/references', [HomeController::class,'references'])->name('reference
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class,'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class,'faq'])->name('faq');
+Route::post('/storecomment', [HomeController::class,'storecomment'])->name('storecomment');
 
 
 
@@ -158,5 +142,15 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
     });
 
+
+    
+        //******* ADMIN COMMENT ROUTES *******
+        Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function(){
+            Route::get('/', 'index')->name('index');
+            Route::get('/show/{id}', 'show')->name('show');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        });
+    
 });
         

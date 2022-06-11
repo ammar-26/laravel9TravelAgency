@@ -59,7 +59,19 @@
 							<div class="box-body" itemprop="description">
 								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
 								<section itemprop="time">
-									<p><span>Duration:</span> 4 Years</p>
+									@php
+										$average = $rs->comment->average('rate');
+									@endphp
+									<div class="review-rating ">
+										<p><span>Rate : </span></p>
+									{{number_format($average, 2)}}
+										<i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+										<i class="fa fa-star @if ($average<2) -o empty @endif"></i>
+										<i class="fa fa-star @if ($average<3) -o empty @endif"></i>
+										<i class="fa fa-star @if ($average<4) -o empty @endif"></i>
+										<i class="fa fa-star @if ($average<5) -o empty @endif"></i>
+										({{$rs->comment->count('id')}})
+									</div>
 									<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
 									<p><span>Fee:</span> {{$rs->price}}</p>
 								</section>

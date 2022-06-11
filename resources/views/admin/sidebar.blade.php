@@ -40,7 +40,7 @@ MAIN SIDEBAR MENU
             
 
             <li class="sub-menu">
-                <a href="{{route('admin.category.index')}}" >
+                <a href="{{route('admin.comment.index')}}" >
                     <i class="fa fa-comment"></i>
                     <span>Comments</span>
                 </a>

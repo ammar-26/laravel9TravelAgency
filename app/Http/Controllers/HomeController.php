@@ -9,6 +9,7 @@ use App\Models\Setting;
 use App\Models\Message;
 use App\Models\Category;
 use App\Models\Package;
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\user;
 
@@ -26,10 +27,10 @@ class HomeController extends Controller
     public function redirect(){
         if(Auth::id()){
             if(Auth::user()->usertype == '0'){
-                return view('home');
+                return redirect('home');
             }
             else{
-                return view(admin.index);
+                return view('admin.index');
             }
         }
         else{
@@ -94,7 +95,22 @@ class HomeController extends Controller
         $data->ip = $request->ip();
         $data->save();
 
-        return redirect()->route( route: 'contact')->with('info', 'Your message has been sent, Thank you.');
+        return redirect()->route('contact')->with('info', 'Your message has been sent, Thank you.');
+    }
+
+
+    public function storecomment(Request $request){
+        // dd($request);
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->package_id = $request->input('package_id');
+        $data->subject = $request->input( 'subject');
+        $data->comment = $request->input('comment');
+        $data->rate = $request->input('rate');
+        $data->ip = $request->ip();
+        $data->save();
+
+        return redirect()->route('package', ['id'=>$request->input('package_id')])->with('success', 'Your comment has been sent, Thank you.');
     }
 
     
@@ -103,10 +119,12 @@ class HomeController extends Controller
         $data = Package::find($id);
         $packagelist1 = Package::limit(6)->get();
         $images = DB::table('images')->where('package_id', $id)->get();
+        $reviews = Comment::where('package_id',$id)->where('status', 'True')->get();
         return view('home.package', [
             'data' => $data,
             'images' => $images,
-            'packagelist1' => $packagelist1
+            'packagelist1' => $packagelist1,
+            'reviews' => $reviews
         ]);
     }
 
