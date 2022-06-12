@@ -63,7 +63,7 @@ MAIN SIDEBAR MENU
 
             
             <li class="sub-menu">
-                <a href="{{route('admin.category.index')}}" >
+                <a href="{{route('admin.user.index')}}" >
                     <i class="fa fa-user"></i>
                     <span>Users</span>
                 </a>
