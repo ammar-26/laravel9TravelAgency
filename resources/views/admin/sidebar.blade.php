@@ -8,7 +8,7 @@ MAIN SIDEBAR MENU
         <ul class="sidebar-menu" id="nav-accordion">
         
             <p class="centered"><a href="profile.html"><img src="{{asset('assets')}}/admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Ammar Mohamed</h5>
+            <h5 class="centered"> {{ Auth::user()->name }} </h5>
             
             <li class="mt">
                 <a href="{{route('admin.index')}}">
