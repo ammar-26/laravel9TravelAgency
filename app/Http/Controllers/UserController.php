@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Comment;
+
 
 class UserController extends Controller
 {
@@ -15,6 +18,14 @@ class UserController extends Controller
     {
         //
         return view('home.user.index');
+    }
+
+
+    public function comments(){
+        $comments = comment::where('user_id', '=' ,Auth::id())->get();
+        return view('home.user.comments',[
+            'comments' =>$comments,
+        ]);
     }
 
     /**
@@ -81,5 +92,13 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function commentdestroy($id)
+    {
+        //
+        $data = Comment::find($id);
+        $data->delete();
+        return redirect(route('userpanel.comments'));
     }
 }

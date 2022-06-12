@@ -27,12 +27,12 @@
 						@endforeach
 						</ul>
 					</li>
-					<li class="menu-parent">News
+					<!-- <li class="menu-parent">News
 						<ul class="sub-menu">
 							<li><a href="#">Child</a></li>
 							<li><a href="#">Child</a></li>
 						</ul>
-					</li>
+					</li> -->
 					<li><a href="{{route('about')}}">About</a></li>
 					<li><a href="{{route('references')}}">References</a></li>
 					<li><a href="{{route('faq')}}">FAQ</a></li>

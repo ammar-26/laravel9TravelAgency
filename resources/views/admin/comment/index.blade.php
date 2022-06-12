@@ -34,7 +34,7 @@ MAIN CONTENT
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($data as $rs)
+                        @foreach($comments as $rs)
                         <tr>
                             <td>{{$rs->id}}</td>
                             <td><a href="{{route('admin.package.show', ['id'=>$rs->package_id])}}"> {{$rs->package->title}} </a></td>

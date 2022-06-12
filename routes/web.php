@@ -87,13 +87,13 @@ Route::middleware([
 
 Route::middleware('auth')->group(function(){
 
-        //******* USER ROUTES *******
+        //******* USER PANEL ROUTES *******
 
         Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function(){
 
             Route::get('/', 'index')->name('index');
-
-
+            Route::get('/comments', 'comments')->name('comments');
+            Route::get('/commentdestroy/{id}', 'commentdestroy')->name('commentdestroy');
 
         });
 

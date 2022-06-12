@@ -57,7 +57,7 @@
 							</div>
 								<a href="{{route('package', ['id'=>$rs->id])}}" class="learn-desining-banner" itemprop="name"> {{$rs->title}}</a>
 							<div class="box-body" itemprop="description">
-								<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
+							<p>{{$rs->description}}</p>
 								<section itemprop="time">
 									@php
 										$average = $rs->comment->average('rate');
@@ -72,8 +72,8 @@
 										<i class="fa fa-star @if ($average<5) -o empty @endif"></i>
 										({{$rs->comment->count('id')}})
 									</div>
-									<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-									<p><span>Fee:</span> {{$rs->price}}</p>
+									<p><span>Status:</span> {{$rs->status}} </p>
+									<p><span>Fee:</span> {{$rs->price}} </p>
 								</section>
 							</div>
 						</div>

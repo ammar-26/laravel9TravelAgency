@@ -119,12 +119,12 @@ class HomeController extends Controller
         $data = Package::find($id);
         $packagelist1 = Package::limit(6)->get();
         $images = DB::table('images')->where('package_id', $id)->get();
-        $reviews = Comment::where('package_id',$id)->where('status', 'True')->get();
+        $comments = Comment::where('package_id',$id)->where('status', 'True')->get();
         return view('home.package', [
             'data' => $data,
             'images' => $images,
             'packagelist1' => $packagelist1,
-            'reviews' => $reviews
+            'comments' => $comments
         ]);
     }
 

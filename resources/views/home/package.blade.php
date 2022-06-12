@@ -92,24 +92,6 @@
                 <section class="course-objective">
                     <h3>Details</h3>
                     <p>{!! $data->detail !!}</p>
-                    <h3>Certification</h3>
-                    <p>After this course Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc illum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                    <h3>Who can apply for this course?</h3>
-                    <ul>
-                        <li>+2 with science faculty</li>
-                        <li>+2 with management faculty</li>
-                        <li>+2 with science faculty</li>
-                        <li>+2 with management faculty</li>
-                    </ul>
-
-                    <h3>Training Methodology</h3>
-                    <ul>
-                        <li>Weekly test</li>
-                        <li>Digital Class</li>
-                        <li>Field Visit and real project demonstration</li>
-                        <li>+2 with managem</li>
-                    </ul>
                 </section>
             </article>					
         </main>
@@ -142,12 +124,12 @@
             <!-- New Letter Ends -->
             <div class="recent-post">
                 <h2>Review({{$data->comment->count('id')}})</h2>
-                @foreach($reviews as $rs)
+                @foreach($comments as $rs)
                     <!-- <div class="post"> -->
                     <div class="single-review">
                         <div class="review-heading">                
-                            <div><a href="#"><i class="fa fa-user-o"></i> {{$rs->user->name}} </a></div>
-                            <div><a href="#"><i class="fa fa-user-o"></i> {{$rs->created_at}} </a></div>
+                            <div><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i> {{$rs->user->name}} </a></div>
+                            <div><a href="#"><i class="fa fa-clock"></i> {{$rs->created_at}} </a></div>
                             <div class="review-rating pull-right">
                                 <i class="fa fa-star @if ($rs->rate<1) -o empty @endif"></i>
                                 <i class="fa fa-star @if ($rs->rate<2) -o empty @endif"></i>
@@ -187,11 +169,23 @@
                         <div class="img-wrap" itemprop="image"><img src="{{Storage::url($rs->image)}}" style="width:800px; height:300px" alt="Packages picture"></div>
                             <a href="{{route('package', ['id'=>$rs->id])}}" class="learn-desining-banner" itemprop="name"> {{$rs->title}}</a>
                         <div class="box-body" itemprop="description">
-                            <p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
+                            <p>{{$rs->description}}</p>
                             <section itemprop="time">
-                                <p><span>Duration:</span> 4 Years</p>
-                                <p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-                                <p><span>Fee:</span> 4,00,000</p>
+                                @php
+                                    $average = $rs->comment->average('rate');
+                                @endphp
+                                <div class="review-rating ">
+                                    <p><span>Rate : </span></p>
+                                    {{number_format($average, 2)}}
+                                    <i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                                    <i class="fa fa-star @if ($average<2) -o empty @endif"></i>
+                                    <i class="fa fa-star @if ($average<3) -o empty @endif"></i>
+                                    <i class="fa fa-star @if ($average<4) -o empty @endif"></i>
+                                    <i class="fa fa-star @if ($average<5) -o empty @endif"></i>
+                                    ({{$rs->comment->count('id')}})
+                                </div>
+                                <p><span>Status:</span> {{$rs->status}} </p>
+                                <p><span>Fee:</span> {{$rs->price}} </p>
                             </section>
                         </div>
                     </div>
