@@ -23,7 +23,7 @@
 						
 							@auth
 							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-								<strong class="text-uppercase" style="text-color: white">{{Auth::user()->name}}</strong>
+								<strong class="text-uppercase" style="text-color: white"><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i>{{Auth::user()->name}}</a></strong>
 							</div>
 							<a href="/logoutuser">Logout</a>
 							@endauth

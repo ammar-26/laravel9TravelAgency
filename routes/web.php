@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -85,6 +86,17 @@ Route::middleware([
     //******* USER AUTH CONTROL *******
 
 Route::middleware('auth')->group(function(){
+
+        //******* USER ROUTES *******
+
+        Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function(){
+
+            Route::get('/', 'index')->name('index');
+
+
+
+        });
+
 
     //******* ADMIN PANEL ROUTES *******
 
