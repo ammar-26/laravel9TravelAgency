@@ -9,13 +9,13 @@
 
 <div class="section">
     <div class="container">
-        <div class="row">
-            <section class="contact-page-section">
-                <div class="people-info-wrap">
-                    {!! $setting->references !!}
-                </div>
-            </section>
-        </div>
+        <section class="contact-page-section">
+            <div class="people-info-wrap">
+            <h1>References</h1>
+                <br>
+                {!! $setting->references !!}
+            </div>
+        </section>
     </div>
 </div> 
 

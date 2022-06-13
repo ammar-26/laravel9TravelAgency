@@ -74,12 +74,6 @@ MAIN CONTENT
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Passenger</label>
-                            <div class="col-sm-10">
-                                <input type="number" name="passenger" class="form-control" value="0">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Status</label>
                             <select class="col-sm-2 col-sm-2 control-label" name="status" >
                                 <option>---select---</option>

@@ -59,11 +59,6 @@ MAIN CONTENT
                                 <td class="hidden-phone">{{$data->price}}</td>
                             </tr>
                             <tr>
-                                <td style="width:150px">Passenger</td>
-                                <td class="hidden-phone">{{$data->passenger}}</td>
-                            </tr>
-                            
-                            <tr>
                                 <td style="width:150px">Status</td>
                                 <td class="hidden-phone">{{$data->status}}</td>
                             </tr>

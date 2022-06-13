@@ -77,12 +77,6 @@ MAIN CONTENT
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Passenger</label>
-                            <div class="col-sm-10">
-                                <input type="number" name="passenger" class="form-control" value="{{$data->passenger}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Status</label>
                             <select type="text" name="status" class="col-sm-2 col-sm-2 control-label" value="{{$data->status}}">
                                 <option>True</option>

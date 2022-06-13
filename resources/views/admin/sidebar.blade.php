@@ -18,7 +18,7 @@ MAIN SIDEBAR MENU
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('admin.category.index')}}">
+                <a href="{{route('admin.reservation.index')}}">
                     <i class="fa fa-dashboard"></i>
                     <span>Reservation</span>
                 </a>

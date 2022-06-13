@@ -113,7 +113,6 @@ class AdminPackageController extends Controller
         $data->description = $request->input('description');
         $data->detail = $request->input('detail');
         $data->price = $request->input('price');
-        $data->passenger = $request->input('passenger');
         $data->status = $request->input('status');
         if($request->file('image')){
             $data->image=$request->file('image')->store('images');

@@ -23,12 +23,12 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('detail')->nullable();
             $table->float('price')->nullable();
-            $table->integer('passenger')->nullable();
             $table->string('status')->nullable()->default('Unavailable');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

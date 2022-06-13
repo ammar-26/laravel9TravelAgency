@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
+use App\Http\Controllers\AdminPanel\ReservationController;
 use App\Http\Controllers\UserController;
 
 
@@ -108,7 +109,13 @@ Route::middleware('auth')->group(function(){
             Route::get('/setting', [AdminHomeController::class,'setting'])->name('setting');
             Route::post('/setting', [AdminHomeController::class,'settingUpdate'])->name('setting.update');
 
-
+        //******* RESERVATION ROUTES *******
+        Route::prefix('/reservation')->name('reservation.')->controller(ReservationController::class)->group(function(){
+            Route::get('/', 'index')->name('index');
+            Route::get('/show/{id}', 'show')->name('show');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        });
 
         //******* ADMIN CATEGORY ROUTES *******
         Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function(){

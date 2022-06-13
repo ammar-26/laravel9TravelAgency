@@ -22,7 +22,7 @@ class UserController extends Controller
 
 
     public function comments(){
-        $comments = comment::where('user_id', '=' ,Auth::id())->get();
+        $comments = Comment::where('user_id', '=' ,Auth::id())->get();
         return view('home.user.comments',[
             'comments' =>$comments,
         ]);
