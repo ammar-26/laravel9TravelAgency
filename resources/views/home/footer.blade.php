@@ -5,7 +5,7 @@
 						<header>
 							<h1>about</h1>
 						</header>
-						<p>Edulab is a great start for and travel. Personnel or oganization to start the online business with 1 click</p>
+						<p>tarvellab is a great start for and travel. Personnel or oganization to start the online business with 1 click</p>
 
 						<h4><a href="tel:+9779813639131"><i class="fas fa-phone"></i> +977 9813639131</a></h4>
 						<h4><a href="mailto:info@travelpro.com"><i class="fas fa-envelope"></i> info@travelpro.com</a></h4>
@@ -17,30 +17,30 @@
 							<h1>links</h1>
 						</header>
 						<ul>
-							<li><a href="#">Teacher</a></li>
-							<li><a href="#">Courses</a></li>
-							<li><a href="#">Courses</a></li>
-							<li><a href="#">Courses</a></li>
-							<li><a href="#">Courses</a></li>
-							<li><a href="#">Courses</a></li>
+							<li><a href="#">Category</a></li>
+							<li><a href="#">Category</a></li>
+							<li><a href="#">Category</a></li>
+							<li><a href="#">package</a></li>
+							<li><a href="#">package</a></li>
+							<li><a href="#">package</a></li>
 						</ul>
 					</div>
 
 					<div class="box-wrap">
 						<header>
-							<h1>recent courses</h1>
+							<h1>recent packages</h1>
 						</header>
 						<div class="recent-course-wrap">
 							<img src="{{asset('assets')}}/img/ui-ux.jpg" alt="Ui/Ux Designing">
 							<a href=""><div class="course-name">
-								<h3>UI/UX Designer courses</h3>
+								<h3> kids package</h3>
 								<p><span>$50</span> $40</p>
 							</div></a>
 						</div>
 						<div class="recent-course-wrap">
 							<img src="{{asset('assets')}}/img/ui-ux.jpg" alt="Ui/Ux Designing">
 							<a href=""><div class="course-name">
-								<h3>UI/UX Designer courses</h3>
+								<h3> kids package</h3>
 								<p><span>$50</span> $40</p>
 							</div></a>
 						</div>

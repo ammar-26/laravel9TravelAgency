@@ -85,7 +85,7 @@
 			</div>
 		</div>
 		<!-- Learn Packages End -->
-		<section class="whyUs-section">
+		<!-- <section class="whyUs-section">
 			<div class="container">
 				<div class="featured-points">
 					<ul>
@@ -102,7 +102,7 @@
 					<a href="#" class="read-more-btn">read more</a>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- Closed WhyUs section -->
 		<section class="page-heading">
 			<div class="container">
@@ -172,12 +172,12 @@
 			</div>
 		</section>
 		<!-- End of gallery Images -->
-		<section class="page-heading">
+		<!-- <section class="page-heading">
 			<div class="container">
 				<h2>upcomming events</h2>
 			</div>
-		</section>
-		<section class="events-section" itemprop="event" itemscope itemtype=" http://schema.org/Event">
+		</section> -->
+		<!-- <section class="events-section" itemprop="event" itemscope itemtype=" http://schema.org/Event">
 			<div class="container">
 				<div class="event-wrap">
 					<div class="img-wrap" itemprop="image">
@@ -205,9 +205,9 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- End of Events section -->
-		<section class="what-other-say">
+		<!-- <section class="what-other-say"> -->
 			<!-- <div class="container">
 				<div class="wrap-others-say" itemprop="review" itemscope itemtype="http://schema.org/ReviewAction">
 					<h1>what other say about us</h1>
@@ -350,7 +350,7 @@
 					</div>
 				</div>
 			</div> -->
-			<div class="container">
+			<!-- <div class="container">
 				<h4 class="article-subtitle">Get to Know</h4>
 				<h2 class="head">what our customer say</h2>
 				<div class="three owl-carousel owl-theme">
@@ -400,9 +400,9 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- End of Others talk -->
-		<section class="page-heading">
+		<!-- <section class="page-heading">
 			<div class="container">
 				<h2>latest news</h2>
 			</div>
@@ -447,7 +447,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- Latest News CLosed -->
 		<section class="query-section">
 			<div class="container">
