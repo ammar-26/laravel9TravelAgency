@@ -55,6 +55,8 @@ Route::view('/registeruser', 'home.register')->name('registeruser');
 Route::get('/logoutuser', [HomeController::class,'logout'])->name('logoutuser');
 Route::view('/loginadmin', 'admin.login')->name('loginadmin');;
 Route::post('/loginadmincheck', [HomeController::class,'loginadmincheck'])->name('loginadmincheck');
+Route::get('/booking', [HomeController::class,'booking'])->name('booking');
+Route::post('/savereservation', [HomeController::class,'savereservation'])->name('savereservation');
 
 
 
@@ -95,6 +97,7 @@ Route::middleware('auth')->group(function(){
             Route::get('/', 'index')->name('index');
             Route::get('/comments', 'comments')->name('comments');
             Route::get('/commentdestroy/{id}', 'commentdestroy')->name('commentdestroy');
+            Route::get('/reservations', 'reservations')->name('reservations');
 
         });
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Reservation;
+
 
 class ReservationController extends Controller
 {
@@ -14,6 +16,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
+        //
         $data = Reservation::all();
         // dd($data);
         return view('admin.reservation.index', ['data'=>$data]);
@@ -50,7 +53,9 @@ class ReservationController extends Controller
     {
         $data = Reservation::find($id);
         $data->save();
-        return view('admin.reservation.show', ['data'=>$data]);
+        return view('admin.reservation.show', [
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -79,23 +84,6 @@ class ReservationController extends Controller
         $data->save();
         return redirect(route('admin.reservation.show', ['id'=>$id]));
     }
-
-    // public function up()
-    // {
-    //     Schema::create('reservations', function (Blueprint $table) {
-    //         $table->id()->autoIncrement();
-    //         $table->integer('user_id');
-    //         $table->integer('package_id');
-    //         $table->string('startdate');
-    //         $table->integer('person');
-    //         $table->integer('price');
-    //         $table->float('amount');
-    //         $table->integer('ip', 150)->nullable();
-    //         $table->string('note', 20);
-    //         $table->string('status', 30)->default('New');
-    //         $table->timestamps();
-    //     });
-    // }
 
     /**
      * Remove the specified resource from storage.

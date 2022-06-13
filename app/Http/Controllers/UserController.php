@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
+use App\Models\Reservation;
 
 
 class UserController extends Controller
@@ -25,6 +26,14 @@ class UserController extends Controller
         $comments = Comment::where('user_id', '=' ,Auth::id())->get();
         return view('home.user.comments',[
             'comments' =>$comments,
+        ]);
+    }
+
+    
+    public function reservations(){
+        $reservations = Reservation::where('user_id', '=' ,Auth::id())->get();
+        return view('home.user.reservations',[
+            'reservations' =>$reservations,
         ]);
     }
 

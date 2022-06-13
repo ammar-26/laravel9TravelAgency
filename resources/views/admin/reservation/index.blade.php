@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Comment & Reviews List')
+@section('title', 'Reservation List')
 
 
 @section('content')
@@ -17,17 +17,16 @@ MAIN CONTENT
             <div class="col-lg-12">
             <div class="col-md-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i>Comment Lists</h4>
+                    <h4><i class="fa fa-angle-right"></i>Reservation Lists</h4>
                     <hr>
                     <table class="table">
                         <thead>
                         <tr>
-                            <th style = "width: 25px">id</th>
-                            <th>Package</th>
-                            <th>Name</th>
-                            <th>Subject</th>
-                            <th>Review</th>
-                            <th>Rate</th>
+                            <th style = "width: 25px">user</th>
+                            <th>startdate</th>
+                            <th>person</th>
+                            <th>price</th>
+                            <th>amount</th>
                             <th>Status</th>
                             <th style = "width: 40px">show</th>
                             <th style = "width: 40px">delete</th>
@@ -36,12 +35,11 @@ MAIN CONTENT
                         <tbody>
                         @foreach($data as $rs)
                         <tr>
-                            <td>{{$rs->id}}</td>
-                            <td><a href="{{route('admin.package.show', ['id'=>$rs->package_id])}}"> {{$rs->package->title}} </a></td>
-                            <td>{{$rs->user->name}}</td>
-                            <td>{{$rs->subject}}</td>
-                            <td>{{$rs->comment}}</td>
-                            <td>{{$rs->rate}}</td>
+                            <td>{{$rs->user_id}}</td>
+                            <td>{{$rs->startdate}}</td>
+                            <td>{{$rs->person}}</td>
+                            <td>{{$rs->price}}</td>
+                            <td>{{$rs->amount}}</td>
                             <td>{{$rs->status}}</td>
                             <td>
                                 <a class="btn btn-round btn-warning" href="{{route('admin.comment.show', ['id'=>$rs->id])}}"

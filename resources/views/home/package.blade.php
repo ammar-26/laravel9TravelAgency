@@ -79,7 +79,7 @@
 
                 <div class="course-box">
                     <h3>Pacakege details</h3>
-                    <button>download pdf</button>
+                    <button><a href="{{route('booking')}}">Book Now</a></button>
                 </div>
             </header>
             <article>

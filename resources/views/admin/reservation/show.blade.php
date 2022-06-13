@@ -1,6 +1,6 @@
 @extends('layouts.adminwindow')
 
-@section('title', 'Show Message : '.$data->title)
+@section('title', 'Show Reservation : '.$data->title)
 
 
 @section('content')
@@ -12,7 +12,7 @@
     <a href="{{route('admin.message.destroy', ['id'=>$data->id])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger">Delete Message</a></i></h3>
     <div class="col-md-12">
         <div class="content-panel">
-            <h4><i class="fa fa-angle-right"></i>Details Message Data</h4>
+            <h4><i class="fa fa-angle-right"></i>Details Reservation Data</h4>
             <hr><table class="table table-scategoryed table-advance table-hover">    
                 <thead>
                     <tr>
@@ -27,33 +27,43 @@
                     </tr>
 
                     <tr>
-                        <td style="width:150px">Package</td>
-                        <td class="hidden-phone">{{$data->package->title}}</td>
+                        <td style="width:150px">User Id</td>
+                        <td class="hidden-phone">{{$data->user_id}}</td>
                     </tr>
 
                     <tr>
-                        <td style="width:150px">Name & Surname</td>
-                        <td class="hidden-phone">{{$data->user->name}}</td>
+                        <td style="width:150px">Package</td>
+                        <td class="hidden-phone">{{$data->package_id}}</td>
+                    </tr>
+
+                    <tr>
+                        <td style="width:150px">Start Date</td>
+                        <td class="hidden-phone">{{$data->startdate}}</td>
                     </tr>
                     
                     <tr>
-                        <td style="width:150px">Subject</td>
-                        <td class="hidden-phone">{{$data->subject}}</td>
+                        <td style="width:150px">Person</td>
+                        <td class="hidden-phone">{{$data->person}}</td>
                     </tr>
                     
                     <tr>
-                        <td style="width:150px">Comment</td>
-                        <td class="hidden-phone">{{$data->comment}}</td>
+                        <td style="width:150px">price</td>
+                        <td class="hidden-phone">{{$data->price}}</td>
                     </tr>
                     
                     <tr>
-                        <td style="width:150px">Rate</td>
-                        <td class="hidden-phone">{{$data->rate}}</td>
+                        <td style="width:150px">Amount</td>
+                        <td class="hidden-phone">{{$data->amount}}</td>
                     </tr>
                     <tr>
                         <td style="width:150px">Ip Number</td>
                         <td class="hidden-phone">{{$data->ip}}</td>
                     </tr>
+                    <tr>
+                        <td style="width:150px">Note</td>
+                        <td class="hidden-phone">{{$data->note}}</td>
+                    </tr>
+                    
                     <tr>
                         <td style="width:150px">Status</td>
                         <td class="hidden-phone">{{$data->status}}</td>
@@ -76,11 +86,11 @@
                                 @csrf
                                 <select name="status">
                                     <option selected>{{$data->status}}</option>
-                                    <option>True</option>
-                                    <option>False</option>
+                                    <option>Accepted</option>
+                                    <option>Refused</option>
                                 </select>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Update Comment</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </td>

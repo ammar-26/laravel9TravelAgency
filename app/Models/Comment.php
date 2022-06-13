@@ -19,4 +19,9 @@ class Comment extends Model
     {
         return $this->belongsTo(Package::class);
     }
+
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class);
+    }
 }

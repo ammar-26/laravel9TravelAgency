@@ -22,17 +22,17 @@
 						</div>
 						
 							@auth
-							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+							<div class="align-middle active">
 								<strong class="text-uppercase" style="text-color: white"><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i>{{Auth::user()->name}}</a></strong>
 							</div>
 							<a href="/logoutuser">Logout</a>
 							@endauth
-						<div class="login-block">
-							@guest
-							<a href="/loginuser">Login /</a>
-							<a href="/registeruser">Register</a>
-							@endguest
-						</div>
+							<div class="login-block">
+								@guest
+								<a href="/loginuser">Login /</a>
+								<a href="/registeruser">Register</a>
+								@endguest
+							</div>
 					</div>
 				</div>
 			</div>

@@ -12,6 +12,7 @@ use App\Models\Package;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\user;
+use App\Models\Reservation;
 
 
 
@@ -136,6 +137,33 @@ class HomeController extends Controller
             'category' => $category,
             'packages' => $packages
         ]);
+    }
+
+    public function booking(){
+        $setting = Setting::first();
+        $data = Reservation::all();
+        return view('home.booking',[
+            'data' =>$data,
+            'setting' => $setting
+        ]);
+    }
+
+    
+    public function savereservation(Request $request){
+        //dd($request);
+        $data = new Reservation();
+        $data->user_id = Auth::id();
+        $data->name = $request->input('name');
+        $data->package_id = $request->input('package_id');
+        $data->startdate = $request->input( 'startdate');
+        $data->person = $request->input('person');
+        $data->price = $request->input('price');
+        $data->amount = $request->input('amount');
+        $data->note = $request->input('note');
+        $data->ip = $request->ip();
+        $data->save();
+
+        return redirect()->route('package', ['id'=>$request->input('package_id')])->with('success', 'Your reservation has been sent, Thank you.');
     }
 
 
